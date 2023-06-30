@@ -1,0 +1,36 @@
+@import './base.css';
+
+.centered {
+  align-items: center;
+  text-align: center;
+}
+
+.flex-item.big {
+outline: 3px solid #333;
+max-width: 900px;
+margin-left: 150px;
+padding-left: 10px;
+padding-right: 10px;
+}
+
+img.inverted {
+  transform: scaleX(-1);
+
+}
+
+img.smol {
+  height: 60px;
+  width: 60px;
+  vertical-align:middle;
+}
+
+
+p.bigggy {
+  display: inline-block;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+div.text {
+  text-align: left;
+}
