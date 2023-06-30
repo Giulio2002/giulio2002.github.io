@@ -8,7 +8,12 @@
   } from 'mdb-vue-ui-kit';
   import { ref } from 'vue';
 
-  const collapse3 = ref(true);
+const collapse3 = ref(true);
+
+
+function route(path: String) {
+    
+}
 
 </script>
 
