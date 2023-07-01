@@ -26,7 +26,7 @@ function route(path: String) {
       ></MDBNavbarToggler>
       <MDBCollapse id="#navbarExample03" v-model="collapse3">
         <MDBNavbarNav>
-          <MDBNavbarItem  class="item" href="/"> / </MDBNavbarItem>
+          <MDBNavbarItem  class="item" href="/"> /home </MDBNavbarItem>
           <MDBNavbarItem class="item" href="/feats"> /feats </MDBNavbarItem>
           <MDBNavbarItem class="item" href="/hackathons"> /hackathons </MDBNavbarItem>
           <MDBNavbarItem class="item" href="/stuffidoforfun"> /stuffidoforfun </MDBNavbarItem>
@@ -45,10 +45,8 @@ function route(path: String) {
     text-decoration: underline;
 }
 
-@media all and (max-width: 768px) {
-    .header {
-        position: absolute;
-    }
+.header {
+    outline: 3px solid #333;
 }
 
 

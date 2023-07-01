@@ -10,7 +10,7 @@
         <br>
         <p class="bigggy centered">
             <img src="@/assets/sus.webp" alt="idk" class="inverted smol" />
-             Giulio's Feats
+            My Feats
             <img src="@/assets/sus.webp" alt="idk" class="smol" />
         </p>
         <div class="text">

@@ -5,12 +5,12 @@
   text-align: center;
 }
 
-.flex-item.big {
-outline: 3px solid #333;
-max-width: 900px;
-margin-left: 15%;
-padding-left: 10px;
-padding-right: 10px;
+flex-item.big {
+  outline: 3px solid #333;
+  max-width: 900px;
+  margin-left: 150px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 img.inverted {
@@ -33,4 +33,23 @@ p.bigggy {
 
 div.text {
   text-align: left;
+}
+
+@media all and (max-width: 768px) {
+  .header {
+      position: relative;
+  }
+  .flex-item.big {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: 0px;
+  }
+  p.bigggy {
+    font-size: 16px;
+  }
+  img.smol {
+    height: 30px;
+    width: 30px;
+    vertical-align:middle;
+  }
 }
