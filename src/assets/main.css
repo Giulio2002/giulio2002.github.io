@@ -2,6 +2,7 @@
 
 .centered {
   align-items: center;
+  align-content: center;
   text-align: center;
 }
 
@@ -33,6 +34,14 @@ p.bigggy {
 
 div.text {
   text-align: left;
+}
+
+img.normal {
+  margin-top: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 
 @media all and (max-width: 768px) {

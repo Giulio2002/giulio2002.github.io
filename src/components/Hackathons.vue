@@ -23,7 +23,7 @@
         a developer from Ubisoft, and Enrique, coworker and friend from highschool. However, with our shared expertise, we could not make it. We bootstraped a working EVM-Based
         blockchain in the 3 days duration of the hackathon with Otterscan as the block explorer and docker as the container engine. However, unfortunately,
         me and Nicholas lost to Dandelion. There is to say that the competion was tough because the team that won was a team of 5 and they were all
-        skilled core-developers like myself. Here is a picture of me, Nicholas and Enrique being very happy boys:
+        skilled core-developers like myself.
 
         <br>
         <a href="https://github.com/Giulio2002/Erigon-Verkled">Github repository of the project</a>
@@ -40,7 +40,12 @@
         Tree, Verkle trees used to take 7 days to generate but thanks to my approach it took only 6 hours to retrieve the tree. The solution is literally the simplest thing
         you can envision, <a href="https://github.com/Giulio2002/verkleipfs">here it is if you want to check it out</a>.
 
-        Below you can see ME, looking down on my defeated opponents:
+        Below you can see ME, looking down on my defeated opponents (If I look distracted, it is because I am drunk):
+
+        <span class="centered">
+            <img src="@/assets/lel.jpeg" class="normal" alt="ervista"/>
+        </span>
+
     </div>
 
   </div>
