@@ -10,7 +10,7 @@
         <br>
         <p class="bigggy centered">
             <img src="@/assets/smol.gif" alt="idk" class="inverted smol" />
-             Stuff I do for fun (Ranked in no particular order)
+             Stuff I do for fun
             <img src="@/assets/smol.gif" alt="idk" class="smol" />
         </p>
         <div class="text">
