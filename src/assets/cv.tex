@@ -1,0 +1,140 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Medium Length Professional CV
+% LaTeX Template
+% Version 3.0 (December 17, 2022)
+%
+% This template originates from:
+% https://www.LaTeXTemplates.com
+%
+% Author:
+% Vel (vel@latextemplates.com)
+%
+% Original author:
+% Trey Hunner (http://www.treyhunner.com/)
+%
+% License:
+% CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[
+	%a4paper, % Uncomment for A4 paper size (default is US letter)
+	11pt, % Default font size, can use 10pt, 11pt or 12pt
+]{resume} % Use the resume class
+
+\usepackage{ebgaramond} % Use the EB Garamond font
+
+%------------------------------------------------
+
+\name{Giulio Rebuffo} % Your name to appear at the top
+
+% You can use the \address command up to 3 times for 3 different addresses or pieces of contact information
+% Any new lines (\\) you use in the \address commands will be converted to symbols, so each address will appear as a single line.
+
+\address{Zug, Gubelstrasse 7, 3000} % Main address
+
+
+\address{giulio.rebuffo@gmail.com} % Contact information
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Education}
+	
+    \textbf{The American School In Switzerland, Lugano} \hfill \textit{2018-2022} \\ 
+	AP Diploma \\
+	Highest Honors Student \\
+	SAT Score: 1480 \\
+    AP Macroeconomics: 5/5 \\
+    AP Calculus AB: 5/5 \\
+    AP Calculus BC: 5/5 \\
+    AP Computer Science 5/5 \\
+    AP Italian: 5/5 \\
+    AP Statistics: 5/5 \\
+
+	\textbf{University Of Lugano} \hfill \textit{September 2022} \\ 
+	B.S. in Computer Science \& Engineering (ongoing) \\
+	
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Experience}
+
+	\begin{rSubsection}{University Of Genoa}{2016 - 2017}{Hobbyist Embedded System Developer}{Genoa, Italy}
+		\item I was allowed to do small research tasks for the robotics research team as an aspiring developer after catching one of the professor's attention,
+		\item I was able to get experience with the ROS framework and get valuable experience with C++ and Python.
+		\item I also built a simulation in C\# for drone path finding using the Unity 3D framework and used speech recognition in joint with my robotics knowledge.
+	\end{rSubsection}
+
+%------------------------------------------------
+
+	\begin{rSubsection}{Deepit AG}{2017-2018}{Intern Backend/Frontend/Blockchain Developer}{Genoa, Italy}
+		\item Built Smart contracts for multiple platforms such as hooks for the Universal Login protocol and rewriten the POA bridge to accept Compound C-Tokens.
+		\item Built frontends and wallets interfaces for customizable ERC20 tokens deployers and built a vesting hub protocol.
+		\item Built and managed PostgreSQL Databases for indexing of customer's transactions.
+        \item Experience with Backend-Frontend interaction of various kinds.
+        \item Learnt several technologies such as Solidity, Typescript, Javascript and WebAssembly (Emscripten).
+        \item Learnt several frameworks such as Truffle, Hardhat, Angular, React.
+	\end{rSubsection}
+
+%------------------------------------------------
+
+	\begin{rSubsection}{Asset Bridging Firm I am not saying the name}{2018 - 2020}{Intern Backend Rust Developer}{Unspecified}
+		\item Learnt how to manage a lot of money.
+        \item Refactored the entirety of their backend.
+        \item Rewritten their tools to conform their new backend version.
+		\item Learnt Rust, and its best practices, along with code refactoring abilities.
+		\item Learnt how large scales deployments are handled and how to act in a corporate-like environment.
+	\end{rSubsection}
+
+    \begin{rSubsection}{Erigon AG}{2021 - present}{Project Lead}{Zug, Switzerland}
+		\item Implemented PoS transition within the Erigon Client, built the entirety and foundation of its consensus Engine.
+		\item Bootstraped and current Project Lead of the Caplin Project.
+		\item Implemented multiple still existing routines of the Silkworm Client written in C++.
+        \item Created the first Rust implementation of the Ethereum jsonrpc in Akula.
+        \item Currently Redesigning Ethereum as a whole within the Erigon Client.
+        \item Performed basics Devop tasks such as contributing in setting up our Kubernetes testing infrastructure.
+        \item Main technologies I used: Golang, Kubernetes, C++, Rust, Python, Docker.
+	\end{rSubsection}
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	TECHNICAL STRENGTHS SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Technical Strengths}
+
+	\begin{tabular}{@{} >{\bfseries}l @{\hspace{6ex}} l @{}}
+		Programming Languages & Golang, C, C++, Rust, Python, Solidity, Javascript, Typescript \\
+		Protocols \& APIs & DevP2P, LibP2P, JSON, GRPC, REST \\
+		Databases & MDBX, LMDB, PostgreSQL, MongoDB \\
+	\end{tabular}
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	EXAMPLE SECTION
+%----------------------------------------------------------------------------------------
+
+%\begin{rSection}{Section Name}
+
+	%Section content\ldots
+
+%\end{rSection}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}

@@ -6,14 +6,11 @@
     MDBNavbarItem,
     MDBCollapse,
   } from 'mdb-vue-ui-kit';
-  import { ref } from 'vue';
+import { ref } from 'vue';
 
 const collapse3 = ref(true);
 
 
-function route(path: String) {
-    
-}
 
 </script>
 
@@ -30,7 +27,7 @@ function route(path: String) {
           <MDBNavbarItem class="item" href="/feats"> /feats </MDBNavbarItem>
           <MDBNavbarItem class="item" href="/hackathons"> /hackathons </MDBNavbarItem>
           <MDBNavbarItem class="item" href="/stuffidoforfun"> /stuffidoforfun </MDBNavbarItem>
-          <MDBNavbarItem class="item" href="/curriculum"> /curriculum </MDBNavbarItem>
+          <MDBNavbarItem class="item link" @click.prevent="downloadCV()" href="/curriculum"> /curriculum </MDBNavbarItem>
           <MDBNavbarItem class="link item" href="https://substack.com/inbox"> /blog </MDBNavbarItem>
           <MDBNavbarItem class="link item" href="https://github.com/Giulio2002"> /github </MDBNavbarItem>
           <MDBNavbarItem class="link item" href="https://twitter.com/GiulioRebuffo"> /twitter </MDBNavbarItem>
@@ -54,3 +51,24 @@ function route(path: String) {
     margin-left: 5px;
 }
 </style>
+
+<script lang="ts">
+import Axios from 'axios';
+
+export default {
+
+  methods: {
+    downloadCV () {
+      Axios.get("/cv.pdf", { responseType: 'blob' })
+        .then(response => {
+          const blob = new Blob([response.data], { type: 'application/pdf' })
+          const link = document.createElement('a')
+          link.href = URL.createObjectURL(blob)
+          link.download = "cv.pdf"
+          link.click()
+          URL.revokeObjectURL(link.href)
+      }).catch(console.error)
+    }
+  }
+}
+</script>
