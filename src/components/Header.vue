@@ -28,7 +28,7 @@ const collapse3 = ref(true);
           <MDBNavbarItem class="item" href="/hackathons"> /hackathons </MDBNavbarItem>
           <MDBNavbarItem class="item" href="/stuffidoforfun"> /stuffidoforfun </MDBNavbarItem>
           <MDBNavbarItem class="item link" @click.prevent="downloadCV()" href="/curriculum"> /curriculum </MDBNavbarItem>
-          <MDBNavbarItem class="link item" href="https://substack.com/inbox"> /blog </MDBNavbarItem>
+          <MDBNavbarItem class="link item" href="https://substack.com/@giulioswamp"> /blog </MDBNavbarItem>
           <MDBNavbarItem class="link item" href="https://github.com/Giulio2002"> /github </MDBNavbarItem>
           <MDBNavbarItem class="link item" href="https://twitter.com/GiulioRebuffo"> /twitter </MDBNavbarItem>
           <MDBNavbarItem class="link item" href="https://myanimelist.net/profile/GiulioRebuffo"> /myanimelist </MDBNavbarItem>
