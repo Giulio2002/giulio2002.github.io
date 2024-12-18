@@ -40,12 +40,6 @@
         Tree, Verkle trees used to take 7 days to generate but thanks to my approach it took only 6 hours to retrieve the tree. The solution is literally the simplest thing
         you can envision, <a href="https://github.com/Giulio2002/verkleipfs">here it is if you want to check it out</a>.
 
-        Below you can see ME, looking down on my defeated opponents (If I look distracted, it is because I am drunk):
-
-        <span class="centered">
-            <img src="@/assets/lel.jpeg" class="normal" alt="ervista"/>
-        </span>
-
     </div>
 
   </div>

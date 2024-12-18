@@ -3,12 +3,18 @@ import Home from "@/components/Home.vue";
 import Projects from "@/components/Projects.vue";
 import Hackathons from "@/components/Hackathons.vue";
 import StuffIDoForFun from "@/components/StuffIDoForFun.vue";
+import EIPs from "@/components/EIPs.vue";
 
 const routes = [
   {
     path: "/",
     name: "Home",
     component: Home,
+  },
+  {
+    path: "/eips",
+    name: "EIPs",
+    component: EIPs,
   },
   {
     path: "/feats",

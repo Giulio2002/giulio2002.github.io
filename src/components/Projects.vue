@@ -9,14 +9,25 @@
     <div class="flex-item big centered">
         <br>
         <p class="bigggy centered">
-            <img src="@/assets/sus.webp" alt="idk" class="inverted smol" />
-            My Feats
-            <img src="@/assets/sus.webp" alt="idk" class="smol" />
+            Stuff done
         </p>
         <div class="text">
         <br>
-        Oke so these are my feats (highlights of the work stuff I have done) in order on how suicidal they made me.
+        Oke so these are my projects (highlights of the work stuff I have done) in order on how suicidal they made me.
         <br>
+        <h3>Designed a more compact data model for archive nodes</h3>
+    <br>
+    <br>
+    I redesigned the data model for Ethereum archive nodes to significantly reduce their storage requirements. The new model reduced the size from 18 TB to 1.6 TB. This improvement allows for better scalability and efficiency in maintaining and querying Ethereum archival data.
+    <br><br>
+    These are the things I have done from a technical standpoint, and what I learnt from this experience:
+    <br>
+    <ul>
+        <li>Data model optimization: Designed a compact and efficient data structure.</li>
+        <li>Scalability improvements: Reduced storage requirements for archive nodes.</li>
+        <li>Performance enhancement: Improved query efficiency and reduced operational costs.</li>
+    </ul>
+    </div>
         <br>
         <h3>Developed the "PoS" implementantion in the Erigon Client</h3>
         <br>
@@ -122,7 +133,6 @@
     </ul>
     </div>
 
-  </div>  
 </div>
 </template>
 
