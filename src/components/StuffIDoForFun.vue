@@ -15,16 +15,6 @@
         </p>
         <div class="text">
         <br>
-        <h3>BLS go library.</h3>
-        <br>
-        Now this is an interesting one to start off. This repository has 150 daily downloads, is used by major projects such as Polygon and Solana (at the time of writing) as a dependency and
-        it has only 3 stars on Github and it is one of the simplest library I have ever created. In a nutshell, it is just a wrapper of another go library but it makes operations more user friendly,
-        by taking account of public key caching. This is by far my most successful and underestimated repository. it is absolutely wild how this came to be. I can genuenly make a supply chain attack and nobody 
-        would notice (THIS IS A JOKE). Relevant repositories: <a href="https://github.com/Giulio2002/bls">bls</a>
-        <br>
-        <img class="normal" src="@/assets/bls.png" alt="lol"/>
-        <br>
-        <br>
         <h3>BSOL</h3>
         <br>
         BSOL is a go program, that tests performance of user-defined smart contracts within go-ethereum. you can just add Benchmark prefix to the
@@ -47,14 +37,6 @@
         EIP1962 introduces a precompile, written in Rust, that allows for different variations of weistrass curves parameters so that you could do elliptic curves operations on any curve
         without having to introduce new precompiles all the time in Ethereum. this EIP got rejected because the more precompiles, the better. The original precompile code
         was written by MatterLabs. You can find my fuzzer <a href="https://github.com/Giulio2002/eip1962-whitebox">here</a>
-        <br>
-        <br>
-        <h3>P2Perinik</h3>
-        P2Perinik is a frankenstein monster, It had no purpose other than me having an excuse to learn new skills during winter break. It is
-        infrastructure to allow for anonymous payments over a limited named address-space on Ethereum. Why do I call it a frankenstein monster?
-        well... Frontend is written in C compiled to web-assembly, Backend is written in Golang, Contracts are written in Solidity and the glue that boots this bad boy up
-        is Written in Python. so yes, a frankenstein monster indeed. Relevant repositories: <a href="https://github.com/Giulio2002/p2perinik">P2Perinik</a>
-        <br>
         <br>
         <h3>RaidenJS</h3>
         When I was 15, I developed, for fun, A Javascript library that interacts with Raiden-Network servers. The original library was written in python but I needed it in
