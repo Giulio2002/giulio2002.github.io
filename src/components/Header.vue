@@ -24,11 +24,11 @@ const collapse3 = ref(true);
       <MDBCollapse id="#navbarExample03" v-model="collapse3">
         <MDBNavbarNav>
           <MDBNavbarItem  class="item" href="/"> /home </MDBNavbarItem>
-          <MDBNavbarItem class="item" href="/eips"> /eips </MDBNavbarItem>
-          <MDBNavbarItem class="item" href="/feats"> /work </MDBNavbarItem>
-          <MDBNavbarItem class="item" href="/hackathons"> /hackathons </MDBNavbarItem>
-          <MDBNavbarItem class="item" href="/stuffidoforfun"> /stuffidoforfun </MDBNavbarItem>
-          <MDBNavbarItem class="item link" @click.prevent="downloadCV()" href="/curriculum"> /curriculum </MDBNavbarItem>
+          <MDBNavbarItem class="item" href="#eips"> /eips </MDBNavbarItem>
+          <MDBNavbarItem class="item" href="#feats"> /work </MDBNavbarItem>
+          <MDBNavbarItem class="item" href="#hackathons"> /hackathons </MDBNavbarItem>
+          <MDBNavbarItem class="item" href="#stuffidoforfun"> /stuffidoforfun </MDBNavbarItem>
+          <MDBNavbarItem class="item link" @click.prevent="downloadCV()" href="#curriculum"> /curriculum </MDBNavbarItem>
           <MDBNavbarItem class="link item" href="https://substack.com/@giulioswamp"> /blog </MDBNavbarItem>
           <MDBNavbarItem class="link item" href="https://github.com/Giulio2002"> /github </MDBNavbarItem>
           <MDBNavbarItem class="link item" href="https://twitter.com/GiulioRebuffo"> /twitter </MDBNavbarItem>
