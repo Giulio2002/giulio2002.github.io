@@ -10,9 +10,9 @@ const otherEips = eips.filter((e) => e.group === 'other')
   <div class="container">
     <div class="flex-item big">
       <p class="section-title centered">
-        <img src="@/assets/rey.gif" alt="spinning anime gif" class="inverted smol" />
+        <img src="@/assets/rey.gif" alt="" aria-hidden="true" class="inverted smol" />
         <span class="grad">EIPs</span>
-        <img src="@/assets/rey.gif" alt="spinning anime gif" class="smol" />
+        <img src="@/assets/rey.gif" alt="" aria-hidden="true" class="smol" />
       </p>
       <p class="section-sub">
         Ethereum Improvement Proposals I've authored or co-authored. Several are

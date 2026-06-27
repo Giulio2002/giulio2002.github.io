@@ -4,14 +4,29 @@
     <meta charset="UTF-8">
     <link rel="icon" href="/logo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Giulio Rebuffo — Ethereum core developer and Project Lead of Caplin (Erigon's consensus layer). Implemented The Merge, author of multiple EIPs, and post-quantum Ethereum research." />
+    <meta name="description" content="Giulio Rebuffo — Ethereum core developer, CTO & AI Lead of Erigon, creator of Caplin (its consensus client). Implemented The Merge, co-author of multiple Final Core EIPs, and post-quantum Ethereum research." />
     <meta name="author" content="Giulio Rebuffo" />
     <meta name="theme-color" content="#0b0c10" />
     <meta property="og:title" content="Giulio Rebuffo — Ethereum Core Developer" />
-    <meta property="og:description" content="Project Lead of Caplin, implemented The Merge in Erigon, EIP author, post-quantum Ethereum research." />
-    <meta property="og:image" content="/logo.png" />
+    <meta property="og:description" content="CTO & AI Lead of Erigon, creator of Caplin, implemented The Merge, co-author of Final Core EIPs, post-quantum & agentic-LLM tooling." />
+    <meta property="og:image" content="https://giulio2002.github.io/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://giulio2002.github.io/" />
     <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@GiulioRebuffo" />
+    <!-- apply persisted theme before paint to avoid a flash -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          document.documentElement.setAttribute('data-theme', t === 'light' ? 'light' : 'dark');
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

@@ -6,9 +6,9 @@
   <div class="container">
     <div class="flex-item big">
       <p class="section-title centered">
-        <img src="@/assets/rey.gif" alt="" class="inverted smol" />
+        <img src="@/assets/rey.gif" alt="" aria-hidden="true" class="inverted smol" />
         <span class="grad">Research</span>
-        <img src="@/assets/rey.gif" alt="" class="smol" />
+        <img src="@/assets/rey.gif" alt="" aria-hidden="true" class="smol" />
       </p>
       <p class="section-sub">
         Protocol-level R&amp;D — the stuff that's still half-theory, half-code. Most of it lives as

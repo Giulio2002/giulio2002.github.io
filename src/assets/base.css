@@ -18,6 +18,7 @@
   --text: #e7e9f0;
   --text-dim: #a4a9bd;
   --text-faint: #707689;
+  --heading: #ffffff;
 
   /* accents — protocol purple → cyan */
   --accent: #8b7bff;
@@ -28,12 +29,43 @@
 
   --glow: 0 0 0 1px rgba(139, 123, 255, 0.25), 0 10px 40px -12px rgba(139, 123, 255, 0.35);
 
+  --header-bg: rgba(11, 12, 16, 0.72);
+  --code-color: var(--accent-2);
+
   --mono: 'JetBrains Mono', 'SFMono-Regular', ui-monospace, Menlo, Consolas, monospace;
   --sans: Roboto, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
 
   --radius: 16px;
   --radius-sm: 10px;
   --maxw: 920px;
+}
+
+/* ── Light theme ───────────────────────────────────────────────────────────
+   Same protocol accents, inverted surfaces. Toggled via <html data-theme>. */
+:root[data-theme='light'] {
+  --bg: #f6f7fb;
+  --bg-2: #eef1f7;
+  --surface: #ffffff;
+  --surface-2: #f3f5fa;
+  --surface-3: #e7ebf3;
+
+  --border: rgba(15, 20, 40, 0.10);
+  --border-strong: rgba(15, 20, 40, 0.20);
+
+  --text: #161a26;
+  --text-dim: #475067;
+  --text-faint: #79829a;
+  --heading: #0e1220;
+
+  --accent: #6d54ff;
+  --accent-2: #0e93cc;
+  --accent-3: #d6488f;
+  --accent-grad: linear-gradient(120deg, #6d54ff 0%, #0e93cc 100%);
+  --accent-grad-soft: linear-gradient(120deg, rgba(109, 84, 255, 0.12), rgba(14, 147, 204, 0.12));
+
+  --glow: 0 0 0 1px rgba(109, 84, 255, 0.18), 0 12px 36px -14px rgba(20, 30, 70, 0.28);
+  --header-bg: rgba(246, 247, 251, 0.78);
+  --code-color: #0e7fb0;
 }
 
 *,
@@ -49,6 +81,21 @@ html {
 html, body {
   overflow-x: hidden;
   max-width: 100%;
+}
+
+/* smooth theme switch (but never animate layout) */
+body, .header, .card, .stat, .chip, .tag, .btn, .theme-toggle {
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+code {
+  font-family: var(--mono);
+  font-size: 0.88em;
+  background: var(--surface-3);
+  color: var(--code-color);
+  padding: 1px 6px;
+  border-radius: 5px;
+  border: 1px solid var(--border);
 }
 
 body {
@@ -83,10 +130,15 @@ a:hover {
 }
 
 h1, h2, h3, h4 {
-  color: #fff;
+  color: var(--heading);
   font-weight: 700;
   line-height: 1.25;
 }
+
+/* light-theme contrast fixes for fixed-color pills */
+:root[data-theme='light'] .pill.live { color: #16864f; background: rgba(22, 134, 79, 0.10); }
+:root[data-theme='light'] .pill.warn { color: #946400; background: rgba(148, 100, 0, 0.10); }
+:root[data-theme='light'] a:hover { color: #0b6f99; }
 
 ul {
   padding-left: 1.2em;

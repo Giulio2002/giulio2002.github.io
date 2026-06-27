@@ -6,9 +6,9 @@
   <div class="container">
     <div class="flex-item big">
       <p class="section-title centered">
-        <img src="@/assets/smol.gif" alt="" class="inverted smol" />
+        <img src="@/assets/smol.gif" alt="" aria-hidden="true" class="inverted smol" />
         <span class="grad">Stuff I do for fun</span>
-        <img src="@/assets/smol.gif" alt="" class="smol" />
+        <img src="@/assets/smol.gif" alt="" aria-hidden="true" class="smol" />
       </p>
       <p class="section-sub">Side quests, toys, and things I built because I felt like it.</p>
 
