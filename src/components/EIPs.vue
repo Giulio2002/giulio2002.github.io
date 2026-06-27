@@ -1,50 +1,53 @@
 <script setup lang="ts">
+import { eips, statusPill } from '@/data/eips'
 
+const finalEips = eips.filter((e) => e.group === 'final')
+const otherEips = eips.filter((e) => e.group === 'other')
 </script>
 
 <template>
-<br>
+<div class="page">
+  <div class="container">
+    <div class="flex-item big">
+      <p class="section-title centered">
+        <img src="@/assets/rey.gif" alt="spinning anime gif" class="inverted smol" />
+        <span class="grad">EIPs</span>
+        <img src="@/assets/rey.gif" alt="spinning anime gif" class="smol" />
+      </p>
+      <p class="section-sub">
+        Ethereum Improvement Proposals I've authored or co-authored. Several are
+        <b>Final</b> and shipped in the Fusaka/Osaka upgrade path.
+      </p>
 
-<div class="container">
-    <div class="flex-item big centered">
-        <br>
-        <p class="bigggy centered">
-            <img src="@/assets/rey.gif" alt="idk" class="inverted smol" />
-            Giulio Rebuffo's EIPs
-            <img src="@/assets/rey.gif" alt="idk" class="smol" />
-        </p>
-        <div class="text">
-        <br>
-        Below are the Ethereum Improvement Proposals (EIPs) authored by Giulio Rebuffo:
-        <br>
-        <br>
+      <!-- FINAL / SHIPPED -->
+      <h3 class="centered" style="margin:30px 0 6px">Final &amp; shipped — Fusaka / Osaka</h3>
+      <div class="card headline" v-for="e in finalEips" :key="e.id">
+        <h3>
+          EIP-{{ e.id }} — {{ e.title }}
+          <span :class="statusPill(e.status)">{{ e.status }}</span>
+        </h3>
+        <div class="meta" v-if="e.meta">{{ e.meta }}</div>
+        <p v-html="e.summary"></p>
+        <a :href="e.url" target="_blank" rel="noopener">Read EIP-{{ e.id }} →</a>
+      </div>
 
-        <h3>EIP-7783: Add Controlled Gas Limit Increase Strategy</h3>
-        <p>
-            <b>Published:</b> October 6, 2024<br>
-            <b>Summary:</b> Proposes a mechanism for clients to gradually increase the block gas limit over time. The rationale is to responsibly handle increases in gas limit without destabilizing the network. This strategy allows for systematic adjustments without requiring a hard fork.
-            <a href="https://eips.ethereum.org/EIPS/eip-7783" target="_blank">Read more</a>
-        </p>
+      <!-- AUTHORED / PROPOSALS -->
+      <h3 class="centered" style="margin:36px 0 6px">Other authored EIPs &amp; proposals</h3>
+      <div class="card" v-for="e in otherEips" :key="e.id">
+        <h3>
+          EIP-{{ e.id }} — {{ e.title }}
+          <span :class="statusPill(e.status)">{{ e.status }}</span>
+        </h3>
+        <div class="meta" v-if="e.meta">{{ e.meta }}</div>
+        <p v-html="e.summary"></p>
+        <a :href="e.url" target="_blank" rel="noopener">Read EIP-{{ e.id }} →</a>
+      </div>
 
-        <br>
-
-        <h3>EIP-7801: etha - Sharded Blocks Subprotocol</h3>
-        <p>
-            <b>Published:</b> November 2024<br>
-            <b>Summary:</b> Introduces a new subprotocol, 'etha', enabling Ethereum nodes to communicate available block spans via a bitmask. Each bit represents a 100,000-block span within each 1,000,000 block range of chain history. The rationale is to facilitate more efficient data synchronization among nodes and make EIP-4444s a reality. This EIP is slated for inclusion in future updates.
-            <a href="https://eips.ethereum.org/EIPS/eip-7801" target="_blank">Read more</a>
-        </p>
-
-        <br>
-
-        <h3>EIP-7825: Transaction Gas Limit Cap</h3>
-        <p>
-            <b>Published:</b> November 2024<br>
-            <b>Summary:</b> Proposes enforcing a protocol-level maximum of 30 million gas for any single transaction. The rationale is to limit the worst-case scenario for a transaction, ensuring consistency and preventing excessively large transactions that could impact network performance.
-            <a href="https://eips.ethereum.org/EIPS/eip-7825" target="_blank">Read more</a>
-        </p>
-
-        </div>
+      <p class="centered" style="color:var(--text-faint);font-family:var(--mono);margin-top:28px">
+        protocol design never really stops — most of these live as threads on
+        <a href="https://ethereum-magicians.org/" target="_blank" rel="noopener">Ethereum Magicians</a>.
+      </p>
     </div>
+  </div>
 </div>
 </template>

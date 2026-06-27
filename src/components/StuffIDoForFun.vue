@@ -1,95 +1,128 @@
 <script setup lang="ts">
-
 </script>
 
 <template>
-<br>
+<div class="page">
+  <div class="container">
+    <div class="flex-item big">
+      <p class="section-title centered">
+        <img src="@/assets/smol.gif" alt="" class="inverted smol" />
+        <span class="grad">Stuff I do for fun</span>
+        <img src="@/assets/smol.gif" alt="" class="smol" />
+      </p>
+      <p class="section-sub">Side quests, toys, and things I built because I felt like it.</p>
 
-<div class="container">
-    <div class="flex-item big centered">
-        <br>
-        <p class="bigggy centered">
-            <img src="@/assets/smol.gif" alt="idk" class="inverted smol" />
-             Stuff I do for fun
-            <img src="@/assets/smol.gif" alt="idk" class="smol" />
+      <div class="card headline">
+        <h3>ETH Zürich <span class="pill live">student + guest lecturer</span></h3>
+        <p>
+          I'm a student at <b>ETH Zürich</b>. I also got to flip the lecture hall around: I gave
+          a guest lecture there (D-MTEC, Spring 2025) on Ethereum protocol engineering and
+          consensus design. Slightly surreal to teach in a room you also sit exams in.
         </p>
-        <div class="text">
-        <br>
+        <a href="https://video.ethz.ch/lectures/d-mtec/2025/spring/363-1153-00L/v/AHfV4Bsjf6m"
+           target="_blank">Watch my ETH Zürich lecture →</a>
+      </div>
+
+      <div class="card">
         <h3>BSOL</h3>
-        <br>
-        BSOL is a go program, that tests performance of user-defined smart contracts within go-ethereum. you can just add Benchmark prefix to the
-        smart contract and the method provided will be benchmarked by giving an estimate on how much that method takes in terms of time. I did this, so I could test
-        if the extcodesize exploit was viable in Erigon or not. I made it public and some people apparently use it in production.
-        <br>
-        <br>
-        <h3>GPT-Ask</h3>
-        <br>
-        I do not like using my web browser, so in order to make questions to chatgpt for code refactoring, code reviews, best practices, general questions, etc...
-        I made a Rust program that does all of that via CLI. so by querying chatgpt API, I can ask question to ChatGPT to do stuff from my own terminal. It is written in
-        Rust for no reason. I just wanted a challenge as this was arguably an easy project.
-        Relevant repositories: <a href="https://github.com/Giulio2002/gpt-ask">gpt-ask</a>
-        
-        <br>
-        <br>
-        <h3>Whitebox fuzzing for EIP1962</h3>
-        <br>
-        In the early days of me interacting with Alexey Akhunov, he asked me if I could take a look at whitebox fuzzing for EIP1962,
-        EIP1962 introduces a precompile, written in Rust, that allows for different variations of weistrass curves parameters so that you could do elliptic curves operations on any curve
-        without having to introduce new precompiles all the time in Ethereum. this EIP got rejected because the more precompiles, the better. The original precompile code
-        was written by MatterLabs. You can find my fuzzer <a href="https://github.com/Giulio2002/eip1962-whitebox">here</a>
-        <br>
+        <p>
+          A Go program that benchmarks user-defined smart contracts inside go-ethereum: prefix a
+          contract method with <code>Benchmark</code> and it estimates how long that method
+          takes. I built it to check whether the <code>extcodesize</code> exploit was viable in
+          Erigon. Made it public — apparently some people now use it in production.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>gpt-ask</h3>
+        <p>
+          I don't like leaving my terminal, so I wrote a Rust CLI that queries the ChatGPT API
+          for code refactoring, reviews, best practices, and general questions — all from the
+          shell. Written in Rust for no reason other than wanting a challenge on an otherwise
+          easy project.
+        </p>
+        <a href="https://github.com/Giulio2002/gpt-ask" target="_blank">gpt-ask →</a>
+      </div>
+
+      <div class="card">
+        <h3>Whitebox fuzzing for EIP-1962</h3>
+        <p>
+          Early in my time working with Alexey Akhunov, he asked me to look at whitebox fuzzing
+          for EIP-1962 — a precompile (originally by Matter Labs) for elliptic-curve operations
+          over arbitrary Weierstrass curve parameters, so you wouldn't need a new precompile
+          every time. The EIP was ultimately rejected, but the fuzzer was fun.
+        </p>
+        <a href="https://github.com/Giulio2002/eip1962-whitebox" target="_blank">
+          eip1962-whitebox →</a>
+      </div>
+
+      <div class="card">
         <h3>RaidenJS</h3>
-        When I was 15, I developed, for fun, A Javascript library that interacts with Raiden-Network servers. The original library was written in python but I needed it in
-        JavaScript so I did this. It works fine, likely does not work anymore as I stopped maintaining it 5 years ago. but hey, it worked, you can even install it through
-        npm. Relevant repositories: <a href="https://github.com/Giulio2002/Raidenjs">RaidenJS</a>
-        <br>
-        <br>
+        <p>
+          At 15 I wrote a JavaScript library to talk to Raiden-Network servers. The original was
+          in Python; I needed JS, so I made it. Hasn't been maintained in years and probably
+          doesn't work anymore — but it worked, and you can still install it from npm.
+        </p>
+        <a href="https://github.com/Giulio2002/Raidenjs" target="_blank">RaidenJS →</a>
+      </div>
 
-        <h3>Making a robotic arm move with speech recognition</h3>
+      <div class="card">
+        <h3>Moving a robotic arm with my voice</h3>
+        <p>
+          At 14, as part of a small research project at the University of Genoa, I made a robotic
+          arm move on voice command. I built the communication layer between ROS and the arm's
+          firmware — which meant rewriting the <code>pydobot</code> library for Python 2.7
+          (ROS didn't support Python 3 yet) — then wired in Google's speech recognition. Say
+          "right", it goes right. Say "left", it goes left.
+        </p>
+        <div class="tags">
+          <a class="tag" href="https://github.com/Giulio2002/pydobot-2.7" target="_blank">pydobot-2.7</a>
+          <a class="tag" href="https://github.com/Giulio2002/rosdobot" target="_blank">rosdobot</a>
+          <a class="tag" href="https://github.com/Giulio2002/Talking-Dobot" target="_blank">Talking-Dobot</a>
+          <a class="tag" href="https://github.com/Giulio2002/Dobot-Controller-Android" target="_blank">Android controller</a>
+        </div>
+        <p style="margin-top:14px">Cringe video, for the historical record:</p>
+        <iframe width="280" height="158"
+          src="https://www.youtube.com/embed/XTTXp1ja7Uw"
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>
 
-        When I was 14 years old, I made a robotic arm move with speech recognition, this was actually a small research project with the
-        University of Genoa, and what I did is I built the communication layer beetwen the ROS framework and the Robotic's arm firmware. I had to
-        rewrite the pydobot library so that it was compatible with python 2.7 because ROS did not support python 3 at the time. then, I used google's speech
-        recognition library to actually translate my speech to commands. The arm moved right when I said "right", and it moves "left" when I say left, etc...
-
-        Relevant repositories: <a href="https://github.com/Giulio2002/pydobot-2.7">Pydobot2.7</a>, <a href="https://github.com/Giulio2002/rosdobot">Rosdobot</a>, <a href="https://github.com/Giulio2002/Talking-Dobot">Talking Dobot (Speech recognition)</a>,
-        <a href="https://github.com/Giulio2002/Dobot-Controller-Android">Mobile application that made me control the robotic arm from far away.</a>
-        <br><br>
-        Cringe video:
-
-        <br>
-        <iframe width="280" height="158" src="https://www.youtube.com/embed/XTTXp1ja7Uw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        
-        <br>
-        <br>
-        <h3> Open Source Contributions </h3>
-        <br>
+      <div class="card">
+        <h3>Open-source contributions</h3>
         <ul>
-            <li><a href="https://github.com/ledgerwatch/erigon/commits?author=Giulio2002">Erigon</a>: Author of the Caplin Project, implemented Ethereum PoS, and much more...</li>
-            <li><a href="https://github.com/torquem-ch/silkworm/commits?author=Giulio2002">Silkworm</a>: Implemented many of the currently existing syncing component and took care of ETL framework integration.</li>
-            <li><a href="https://github.com/akula-bft/akula/commits?author=Giulio2002">Akula</a>: Implemented Akula JSON-RPC.</li>
-            <li><a href="https://github.com/sigp/lighthouse/commits?author=Giulio2002">Lighthouse</a>: Partial implementation LightClient server in Lighthouse.</li>
-            <li><a href="https://github.com/UniLogin/UniLogin/commit/8314ceefaf79c8d667ec4c270b9f30cf3397e273">Universal Login</a>: Randomly fixed a major vulnerability in their backend.</li>
-            <li><a href="https://github.com/raiden-network/raiden/commit/4431d0625383fead13069abd7186799911868014">Raiden Network</a>: They did not check if an account had enough money to make a transaction... good lord</li>
+          <li><a href="https://github.com/ledgerwatch/erigon/commits?author=Giulio2002" target="_blank">Erigon</a>
+            — author of the Caplin project, implemented Ethereum PoS, and much more.</li>
+          <li><a href="https://github.com/torquem-ch/silkworm/commits?author=Giulio2002" target="_blank">Silkworm</a>
+            — implemented several still-existing syncing components and ETL framework integration.</li>
+          <li><a href="https://github.com/akula-bft/akula/commits?author=Giulio2002" target="_blank">Akula</a>
+            — implemented the JSON-RPC layer.</li>
+          <li><a href="https://github.com/sigp/lighthouse/commits?author=Giulio2002" target="_blank">Lighthouse</a>
+            — partial light-client server implementation.</li>
+          <li><a href="https://github.com/UniLogin/UniLogin/commit/8314ceefaf79c8d667ec4c270b9f30cf3397e273" target="_blank">Universal Login</a>
+            — fixed a major backend vulnerability.</li>
+          <li><a href="https://github.com/raiden-network/raiden/commit/4431d0625383fead13069abd7186799911868014" target="_blank">Raiden Network</a>
+            — they weren't checking whether an account had enough money to make a transaction… good lord.</li>
         </ul>
+      </div>
 
-        <br>
-        <br>
-        <h3> Honorable mentions </h3>
-        <br>
+      <div class="card">
+        <h3>Honorable mentions</h3>
         <ul>
-        <li><a href="https://github.com/Giulio2002/Contracts-Axios">Axios</a>: Axios is an option trading instrument that allows
-        for decentralised options trading. it works, I have to say, it has no real use but it is a cool enough project. it has even its own User interface written in
-        Angular. I built Axios to learn how to do engineering in the field of financial instruments.</li>
-        <li><a href="https://github.com/Giulio2002/my-formal-verifications">Bunch of formal verification</a>: Practiced formal verification.</li>
-        <li><a href="https://github.com/Giulio2002/Lock-Module">Vesting for UniversalLogin protocol</a>: Vesting hook for universal login.</li>
-        <li><a href="https://github.com/Giulio2002/Ethereum-Taxable-Token">Ethereum Taxable token</a>: A token that every time is transfered takes account of a tax and take a percentage of the amount transferred.</li>
-    </ul>
-        
+          <li><a href="https://github.com/Giulio2002/Contracts-Axios" target="_blank">Axios</a>
+            — a decentralized options-trading instrument with its own Angular UI. No real use, but
+            a cool project; I built it to learn engineering for financial instruments.</li>
+          <li><a href="https://github.com/Giulio2002/my-formal-verifications" target="_blank">Formal verifications</a>
+            — practiced formal verification.</li>
+          <li><a href="https://github.com/Giulio2002/Lock-Module" target="_blank">Vesting for Universal Login</a>
+            — a vesting hook for the Universal Login protocol.</li>
+          <li><a href="https://github.com/Giulio2002/Ethereum-Taxable-Token" target="_blank">Taxable token</a>
+            — an ERC-20 that skims a tax on every transfer.</li>
+        </ul>
+      </div>
 
     </div>
-
   </div>
 </div>
 </template>
-

@@ -1,138 +1,207 @@
 <script setup lang="ts">
-
 </script>
 
 <template>
-<br>
+<div class="page">
+  <div class="container">
+    <div class="flex-item big">
+      <p class="section-title centered"><span class="grad">Stuff I've done</span></p>
+      <p class="section-sub">
+        Highlights of the serious work, roughly ordered by how suicidal they made me.
+      </p>
 
-<div class="container">
-    <div class="flex-item big centered">
-        <br>
-        <p class="bigggy centered">
-            Stuff done
+      <!-- Caplin -->
+      <div class="card headline">
+        <h3>Caplin — a full Ethereum consensus client, mostly solo
+          <span class="pill live">project lead</span></h3>
+        <div class="meta">Go · Erigon · 2022 – present</div>
+        <p>
+          I built an entire Consensus Layer for Erigon because I didn't like how the existing
+          ones operated. It started as a consensus light client, but there weren't enough
+          light-client servers on mainnet, so I gave up on half-measures and went for the full
+          thing. The first prototype took ~9 months. Most of it was me — because needing 10
+          developers for a consensus layer is, if you ask me, a <b>skill issue</b> (this is irony).
+          I'm now Project Lead (not fired yet :D) and brought in another company's manpower, so
+          apparently I have enough social skills to land real partnerships too.
         </p>
-        <div class="text">
-        <br>
-        Oke so these are my projects (highlights of the work stuff I have done) in order on how suicidal they made me.
-        <br>
-        <h3>Designed a more compact data model for archive nodes</h3>
-    <br>
-    <br>
-    I redesigned the data model for Ethereum archive nodes to significantly reduce their storage requirements. The new model reduced the size from 18 TB to 1.6 TB. This improvement allows for better scalability and efficiency in maintaining and querying Ethereum archival data.
-    <br><br>
-    These are the things I have done from a technical standpoint, and what I learnt from this experience:
-    <br>
-    <ul>
-        <li>Data model optimization: Designed a compact and efficient data structure.</li>
-        <li>Scalability improvements: Reduced storage requirements for archive nodes.</li>
-        <li>Performance enhancement: Improved query efficiency and reduced operational costs.</li>
-    </ul>
-    </div>
-        <br>
-        <h3>Developed the "PoS" implementantion in the Erigon Client</h3>
-        <br>
-        <br>
-        When I was still a Junior in the Erigon team, I was tasked with developing "The Merge", which is pretty much
-        the Ethereum PoS implementation for the Execution Layer. It was mostly a solo work, I worked with a Senior and another Junior
-        but I ended up doing most of the work. So, the skills I learnt were pretty much management of high levels of stress, responsability management.
-        It was mostly a test of stress and patience. 
-        <br><br>
-        These are the things I have done from a technical standpoint, and what I learnt from this experience:
-        <br>
         <ul>
-            <li>Resurrected Erigon transaction pool (it did not work before): Learnt how Ethereum transaction pool works.</li>
-            <li>Engine API Implementation: I learnt how consensus-based distributed systems works from an archittectural standpoint.</li>
-            <li>Implemented Management system for different EL states: Learnt how execution of transactions works and how to CoW(copy on write) ethereum states</li>
-            <li>Learnt how to work with people with different backgrounds(<b>but not incompetent</b>): I worked with different client teams so I worked with people with very diverse worldviews than mine(ex-Googlers, ex-Ivy students, and more)</li> 
+          <li>Learned the inner workings of Ethereum 2.0 consensus end-to-end.</li>
+          <li>Memory management & caching for distributed systems.</li>
+          <li>CPU/heap profiling and optimization.</li>
+          <li>DevOps fundamentals — most notably Kubernetes.</li>
         </ul>
-    
-    <br>
-    <br>
-    <h3>Developed an entire Consensus Client by myself because why not? </h3>
-    <br>
-    <br>
-    I decided to create an entire Consensus Layer for the Erigon project because I did not like how other Consensus Layers operates,
-    at the beggining it was just a Consensus LightClient but there were not enough LightClient servers running on Ethereum mainnet so I gave up and went for the full thing.
-    Most of the work was done by myself, because needing 10 developers for a Consensus Layer (like most consensus layers do) is a <b>Skill issue if you ask me</b> (this is irony). the Consensus Layer, (at least the first prototype) was completed over the course of 9 months (including the time it took me for the lightclient).
-    At the time of the writting, I am the Project Lead (I have not been fired yet :D) and I brought another Company's man-power to help so I also have sufficient social skills to
-    bring meaningful partnerships, whether you like it or not.
-    <br><br>
-    These are the things I have done from a technical standpoint, and what I learnt from this experience:
-    <br>
-    <ul>
-        <li>Learnt inner working of Ethereum 2.0 consensus: Learnt how Ethereum Consensus works.</li>
-        <li>Memory management for distributed systems: Learnt how to manage and cache data efficiently in distributed systems.</li>
-        <li>Profiling: Learnt how to optimize CPU and Heap memory using profilers.</li>
-        <li>DevOps Skills: I learnt basic devops skills from a colleague which wants to stay anon. most notably: Kubernetes.</li> 
-    </ul>
+        <div class="tags">
+          <span class="tag">Go</span><span class="tag">consensus</span>
+          <span class="tag">libp2p</span><span class="tag">SSZ</span>
+          <span class="tag">profiling</span><span class="tag">Kubernetes</span>
+        </div>
+      </div>
 
-    <br>
-    <br>
-    <h3>Robotics oriented research at University of Genoa. </h3>
-    <br>
-    <br>
-    When I was 14 years old, I became an unpaid slave at the University of Genoa, which is in Italy. I did various works in the fields of robotic.
-    I was able to use speech recognition to control a robotic arm. I also was able to generate a path finding algorithm for drone path recognition.
-    I also worked with a framework called ROS, so I have some experience with math concepts from that world. I also contributed to embedded system research.
-    I also used the Unity engine for simulating the drones movement (although I am not that proficient using it). I decided that Academia was not my vocation
-    because it underpays you.
-    <br><br>
-    These are the things I have done from a technical standpoint, and what I learnt from this experience:
-    <br>
-    <ul>
-        <li>Unity framework and C#: I built similutations in C#.</li>
-        <li>Inner workings of how embedded systems work.</li>
-        <li>How academic research works: It was with an university.</li>
-    </ul>
-
-    <br>
-    <br>
-    <h3>Bridge Development at unnamed L0 firm in Switzerland. </h3>
-    <br>
-    <br>
-    I worked at an Asset-Bridging firm in Switzerland(L0). I built part of their new version for the Backend (in Rust), refactored their code
-    and Implemented calldata passing to their solidity smart contracts. Lastly, I reviewed/audited some of their Solidity
-    smart contracts and built extensively in Rust on their Backend.
-    <br><br>
-    These are the things I have done from a technical standpoint, and what I learnt from this experience:
-    <br>
-    <ul>
-        <li>Rust: First time I used Rust.</li>
-        <li>Code refactoring: That thing had more duplications than there are in the genetic code of wildlife near Nagasaki.</li>
-        <li>Money Management: They had a lot of money from customers.</li>
-    </ul>
-
-
-    <br>
-    <br>
-    <h3> Implemented JSON-RPC in Akula (Rust Ethereum Client) </h3>
-    <br>
-    <br>
-        I implemented the JSON-RPC interface in Akula before it got closed. I implemented the jsonrpc interface according to the Ethereum specs
-        and introduced an easy way to implement new methods in it. This means I have experience with Ethereum underlying json APIs.
-
+      <!-- Archive node data model -->
+      <div class="card">
+        <h3>Compact data model for archive nodes <span class="pill">18TB → 1.6TB</span></h3>
+        <div class="meta">Storage engineering · Erigon / Caplin</div>
+        <p>
+          I redesigned the data model for Ethereum archive nodes, cutting storage from
+          <b>18 TB to 1.6 TB</b> — an ~11× reduction — while keeping historical state fully
+          queryable. Better scalability, cheaper to run, faster to query.
+        </p>
         <ul>
-            <li>I know how Ethereum jsonrpc API works: I built them in Rust.</li>
-            <li>More proficiency in Rust: I am more proficient in Rust.</li>
+          <li>Data-model optimization: compact, efficient on-disk structures.</li>
+          <li>Scalability: dramatically lower storage footprint for archive nodes.</li>
+          <li>Performance: improved query efficiency and lower operational cost.</li>
         </ul>
-    <br>
-    <br>
+        <div class="tags">
+          <span class="tag">data modeling</span><span class="tag">MDBX</span>
+          <span class="tag">snapshots</span><span class="tag">ETL</span>
+        </div>
+      </div>
 
+      <!-- The Merge -->
+      <div class="card">
+        <h3>The Merge — Ethereum PoS in Erigon's execution layer</h3>
+        <div class="meta">Go · Erigon · as a junior</div>
+        <p>
+          As a junior on the Erigon team I was handed "The Merge" — the PoS implementation for
+          the execution layer. Nominally a team effort with one senior and another junior, but I
+          ended up doing most of it. Mostly a test of stress, patience and responsibility
+          management. It shipped.
+        </p>
+        <ul>
+          <li>Resurrected Erigon's transaction pool (it didn't work before) — learned how the
+              tx pool really works.</li>
+          <li>Engine API implementation — learned how consensus-driven distributed systems are
+              architected.</li>
+          <li>State management across EL states — copy-on-write Ethereum state handling.</li>
+          <li>Worked across client teams with very different backgrounds (ex-Googlers, ex-Ivy,
+              and more) — and <b>not incompetent ones</b>.</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">Engine API</span><span class="tag">txpool</span>
+          <span class="tag">state</span><span class="tag">PoS</span>
+        </div>
+      </div>
 
-    <h3>Protyped and Implemented Pre-sorting of data before database insertion framework in Go, Rust and C++ </h3>
-    <br>
-    <br>
-    I implemented a system that inserts data in sequential order given data in random order of efficient insertion in B-Tree
-    based Databases. Simple implementation of External merge sorting with an heap, not much to stay but it improved writting overhead in our databases.
-    <br><br>
-    These are the things I have done from a technical standpoint, and what I learnt from this experience:
-    <br>
-    <ul>
-        <li>How to design a framewok: I literally design it</li>
-        <li>Databases design: Learnt about Database designs</li>
-    </ul>
+      <!-- Post-Quantum Ethereum -->
+      <div class="card">
+        <h3>Post-Quantum Ethereum — experimental Erigon fork
+          <span class="pill pink">research</span></h3>
+        <div class="meta">Go + Rust · Falcon-512 / Dilithium · 2026</div>
+        <p>
+          An experimental Erigon build exploring what a post-quantum Ethereum could look like. I
+          added <b>Falcon-512</b> and <b>Dilithium</b> signature-verification precompiles and
+          implemented <b>EIP-8175</b> composable transactions (a new tx type) that can be signed
+          with Falcon-512 instead of secp256k1. Proven end-to-end on a Kurtosis devnet: PQ
+          transactions accepted by the txpool, included in blocks, executed successfully.
+        </p>
+        <ul>
+          <li>FALCON_VERIFY and DILITHIUM_VERIFY EVM precompiles, working on-chain.</li>
+          <li>New composable transaction type (0x06) with pluggable signature schemes.</li>
+          <li>Full RLP encode/decode, signer integration, txpool & receipt support.</li>
+          <li>Falcon-512 ↔ NTT-domain bridge between the EIP format and the precompile.</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">Falcon-512</span><span class="tag">Dilithium</span>
+          <span class="tag">EIP-8175</span><span class="tag">precompiles</span>
+          <span class="tag">Rust</span><span class="tag">Kurtosis</span>
+        </div>
+      </div>
+
+      <!-- AI fork implementer -->
+      <div class="card">
+        <h3>AI-driven hard-fork implementer for Erigon
+          <span class="pill warn">tooling</span></h3>
+        <div class="meta">Python · agentic tooling</div>
+        <p>
+          A tool that drives an LLM agent to implement Ethereum consensus hard forks across
+          Caplin's three subsystems — core state transition, block production, and the archive
+          node — then runs the spec + antiquary test suites and feeds failures back into a fix
+          loop until everything is green. Because writing fork boilerplate by hand is a job for
+          a machine.
+        </p>
+        <div class="tags">
+          <span class="tag">Python</span><span class="tag">LLM agents</span>
+          <span class="tag">spec tests</span><span class="tag">automation</span>
+        </div>
+      </div>
+
+      <!-- Robotics -->
+      <div class="card">
+        <h3>Robotics research — University of Genoa</h3>
+        <div class="meta">C++ / C# / Python · age 14</div>
+        <p>
+          At 14 I became an unpaid slave (their word, probably mine) at the University of Genoa,
+          working on robotics. I controlled a robotic arm with speech recognition, built a
+          path-finding algorithm for drones, and worked with ROS. I simulated drone movement in
+          Unity. I decided academia wasn't my vocation — it underpays you.
+        </p>
+        <ul>
+          <li>Unity + C# simulations.</li>
+          <li>Inner workings of embedded systems.</li>
+          <li>How academic research actually works.</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">ROS</span><span class="tag">Unity</span>
+          <span class="tag">C++</span><span class="tag">embedded</span>
+        </div>
+      </div>
+
+      <!-- L0 bridge -->
+      <div class="card">
+        <h3>Bridge development — unnamed L0 firm, Switzerland</h3>
+        <div class="meta">Rust + Solidity</div>
+        <p>
+          I worked at an asset-bridging (L0) firm, building part of the new Rust backend,
+          refactoring their code, implementing calldata passing into their Solidity contracts,
+          and reviewing/auditing some of those contracts.
+        </p>
+        <ul>
+          <li>Rust — my first serious use of it.</li>
+          <li>Refactoring code with more duplication than the wildlife near Nagasaki.</li>
+          <li>Handling large amounts of customer money responsibly.</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">Rust</span><span class="tag">Solidity</span>
+          <span class="tag">audits</span><span class="tag">bridges</span>
+        </div>
+      </div>
+
+      <!-- Akula JSON-RPC -->
+      <div class="card">
+        <h3>JSON-RPC in Akula (Rust Ethereum client)</h3>
+        <div class="meta">Rust</div>
+        <p>
+          I implemented the JSON-RPC interface in Akula before the project shut down — to spec,
+          with an easy way to add new methods. The first Rust implementation of the Ethereum
+          JSON-RPC.
+        </p>
+        <ul>
+          <li>Deep familiarity with Ethereum's JSON-RPC API surface.</li>
+          <li>More proficiency in Rust.</li>
+        </ul>
+        <div class="tags"><span class="tag">Rust</span><span class="tag">JSON-RPC</span></div>
+      </div>
+
+      <!-- Presort framework -->
+      <div class="card">
+        <h3>Pre-sort-before-insert framework (Go, Rust, C++)</h3>
+        <div class="meta">Databases · external merge sort</div>
+        <p>
+          A system that takes randomly-ordered data and inserts it sequentially for efficient
+          writes into B-Tree-based databases — external merge sort with a heap. Simple, but it
+          cut our database write overhead meaningfully.
+        </p>
+        <ul>
+          <li>Designing a reusable framework from scratch.</li>
+          <li>Practical database/storage design.</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">B-Tree</span><span class="tag">merge sort</span>
+          <span class="tag">Go</span><span class="tag">Rust</span><span class="tag">C++</span>
+        </div>
+      </div>
+
     </div>
-
+  </div>
 </div>
 </template>
-

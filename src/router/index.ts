@@ -4,12 +4,18 @@ import Projects from "@/components/Projects.vue";
 import Hackathons from "@/components/Hackathons.vue";
 import StuffIDoForFun from "@/components/StuffIDoForFun.vue";
 import EIPs from "@/components/EIPs.vue";
+import Research from "@/components/Research.vue";
 
 const routes = [
   {
     path: "/",
     name: "Home",
     component: Home,
+  },
+  {
+    path: "/research",
+    name: "Research",
+    component: Research,
   },
   {
     path: "/eips",

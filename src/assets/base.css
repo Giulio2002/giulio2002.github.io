@@ -1,38 +1,118 @@
-/* color palette from <https://github.com/vuejs/theme> */
+/* ===========================================================================
+   Design system — GiulioRebuffo.eth
+   Dark "terminal-meets-protocol" aesthetic. Keep the personality, lose the jank.
+   =========================================================================== */
 :root {
-  --vt-c-white: #ffffff;
-  --vt-c-white-soft: #f8f8f8;
-  --vt-c-white-mute: #f2f2f2;
+  /* surfaces */
+  --bg: #0b0c10;
+  --bg-2: #101218;
+  --surface: #14161f;
+  --surface-2: #191c28;
+  --surface-3: #1f2331;
 
-  --vt-c-black: #181818;
-  --vt-c-black-soft: #222222;
-  --vt-c-black-mute: #282828;
+  /* borders */
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
 
-  --vt-c-indigo: #2c3e50;
+  /* text */
+  --text: #e7e9f0;
+  --text-dim: #a4a9bd;
+  --text-faint: #707689;
 
-  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
-  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
-  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
-  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
+  /* accents — protocol purple → cyan */
+  --accent: #8b7bff;
+  --accent-2: #41d8ff;
+  --accent-3: #ff7ac3;
+  --accent-grad: linear-gradient(120deg, #8b7bff 0%, #41d8ff 100%);
+  --accent-grad-soft: linear-gradient(120deg, rgba(139, 123, 255, 0.18), rgba(65, 216, 255, 0.18));
 
-  --vt-c-text-light-1: var(--vt-c-indigo);
-  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
-  --vt-c-text-dark-1: var(--vt-c-white);
-  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
-  --color-background: var(--vt-c-black);
-  --color-background-soft: var(--vt-c-black-soft);
-  --color-background-mute: var(--vt-c-black-mute);
+  --glow: 0 0 0 1px rgba(139, 123, 255, 0.25), 0 10px 40px -12px rgba(139, 123, 255, 0.35);
 
-  --color-border: var(--vt-c-divider-dark-2);
-  --color-border-hover: var(--vt-c-divider-dark-1);
+  --mono: 'JetBrains Mono', 'SFMono-Regular', ui-monospace, Menlo, Consolas, monospace;
+  --sans: Roboto, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
 
-  --color-heading: var(--vt-c-text-dark-1);
-  --color-text: var(--vt-c-text-dark-2);
+  --radius: 16px;
+  --radius-sm: 10px;
+  --maxw: 920px;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
 
 body {
-  color: var(--color-text);
-  background: var(--color-background);
+  margin: 0;
+  /* MDB sets `body{display:flex}`, which turns #app into a flex item that won't
+     shrink below its content (min-width:auto) and overflows on narrow screens.
+     Reset to block so the layout respects the viewport width. */
+  display: block;
+  color: var(--text);
+  font-family: var(--sans);
+  font-weight: 300;
+  line-height: 1.65;
+  background:
+    radial-gradient(1100px 600px at 85% -10%, rgba(139, 123, 255, 0.12), transparent 60%),
+    radial-gradient(900px 500px at 5% 0%, rgba(65, 216, 255, 0.10), transparent 55%),
+    var(--bg);
+  background-attachment: fixed;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: var(--accent-2);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(65, 216, 255, 0.3);
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+a:hover {
+  color: #9fe9ff;
+  border-color: var(--accent-2);
+}
+
+h1, h2, h3, h4 {
+  color: #fff;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+ul {
+  padding-left: 1.2em;
+}
+li {
+  margin: 0.3em 0;
+}
+
+::selection {
+  background: rgba(139, 123, 255, 0.35);
+  color: #fff;
+}
+
+/* thin custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--surface-3);
+  border-radius: 8px;
+  border: 2px solid var(--bg);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2c3142;
 }
