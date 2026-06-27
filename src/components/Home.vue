@@ -8,13 +8,15 @@
     <!-- HERO -->
     <section class="hero">
       <div class="hero-copy">
-        <span class="eyebrow">CTO @ Erigon · Ethereum Protocol Leader</span>
+        <span class="eyebrow">CTO &amp; AI Lead @ Erigon · Ethereum Protocol Leader</span>
         <h1>Hi, I'm <span class="grad">Giulio Rebuffo</span>.</h1>
         <p class="hero-role">
           I build the plumbing that keeps <b>Ethereum</b> running. <b>CTO &amp; Project Lead</b>
           of Erigon, creator of <b>Caplin</b> (its consensus client), the person who shipped
           <b>The Merge</b> in Erigon, and co-author of multiple <b>Final Core EIPs</b> in the
-          Fusaka/Osaka upgrade. Full-time memory-management enjoyer.
+          Fusaka/Osaka upgrade. As <b>AI Lead</b> I design the agentic coding workflows and
+          self-fixing CI harnesses that build our consensus nodes. Full-time
+          memory-management enjoyer.
         </p>
         <div class="cta-row">
           <a class="btn primary" href="#/feats" style="border-bottom:none">See my work →</a>
@@ -112,6 +114,15 @@
              Erigon's embedded consensus client. Co-authored Final Core EIPs in Fusaka/Osaka,
              built an RL-based p2p peer-selection algorithm, and contributed to Silkworm (C++)
              and the first Rust Ethereum JSON-RPC in Akula.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-when">present · alongside the CTO role</div>
+          <h4>AI Lead — Erigon / Ethereum Foundation</h4>
+          <p>Designed the agentic coding workflow for building new consensus nodes, and built
+             agent harnesses that automatically diagnose and fix CI/test failures. LLM-driven
+             tooling (on Claude and other APIs) that implements entire Ethereum hard forks across
+             the consensus client and validates them against the official spec test vectors in a
+             closed fix loop.</p>
         </div>
       </div>
     </div>

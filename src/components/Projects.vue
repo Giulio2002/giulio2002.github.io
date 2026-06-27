@@ -111,7 +111,7 @@
       <div class="card">
         <h3>AI-driven hard-fork implementer for Erigon
           <span class="pill warn">tooling</span></h3>
-        <div class="meta">Python · agentic tooling</div>
+        <div class="meta">Python · agentic tooling · as Erigon's AI Lead</div>
         <p>
           A tool that drives an LLM agent to implement Ethereum consensus hard forks across
           Caplin's three subsystems — core state transition, block production, and the archive
