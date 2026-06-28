@@ -1,16 +1,12 @@
 <script setup lang="ts">
+import PageHeader from '@/components/PageHeader.vue'
 </script>
 
 <template>
 <div class="page">
   <div class="container">
     <div class="flex-item big">
-      <p class="section-title centered">
-        <img src="@/assets/rey.gif" alt="" aria-hidden="true" class="inverted smol" />
-        <span class="grad">Hackathons</span>
-        <img src="@/assets/rey.gif" alt="" aria-hidden="true" class="smol" />
-      </p>
-      <p class="section-sub">Verkle Trees, mostly. And one solo grand prize.</p>
+      <PageHeader title="Hackathons" gif="rey">Verkle Trees, mostly. And one solo grand prize.</PageHeader>
 
       <div class="card">
         <h3>Berlin Hackathon <span class="pill">Sep 2022</span></h3>

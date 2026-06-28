@@ -16,8 +16,9 @@ function toggleTheme() {
 function closeMenu() { open.value = false; }
 
 onMounted(() => {
-  const saved = (() => { try { return localStorage.getItem('theme'); } catch (e) { return null; } })();
-  applyTheme(saved === 'light' ? 'light' : 'dark');
+  // index.html applies the persisted theme to <html data-theme> before paint;
+  // just sync our ref to whatever it set (no second localStorage read).
+  theme.value = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
 });
 </script>
 

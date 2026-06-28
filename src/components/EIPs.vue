@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { eips, statusPill } from '@/data/eips'
+import PageHeader from '@/components/PageHeader.vue'
 
 const finalEips = eips.filter((e) => e.group === 'final')
 const otherEips = eips.filter((e) => e.group === 'other')
@@ -9,15 +10,10 @@ const otherEips = eips.filter((e) => e.group === 'other')
 <div class="page">
   <div class="container">
     <div class="flex-item big">
-      <p class="section-title centered">
-        <img src="@/assets/rey.gif" alt="" aria-hidden="true" class="inverted smol" />
-        <span class="grad">EIPs</span>
-        <img src="@/assets/rey.gif" alt="" aria-hidden="true" class="smol" />
-      </p>
-      <p class="section-sub">
+      <PageHeader title="EIPs" gif="rey">
         Ethereum Improvement Proposals I've authored or co-authored. Several are
         <b>Final</b> and shipped in the Fusaka/Osaka upgrade path.
-      </p>
+      </PageHeader>
 
       <!-- FINAL / SHIPPED -->
       <h3 class="centered" style="margin:30px 0 6px">Final &amp; shipped — Fusaka / Osaka</h3>

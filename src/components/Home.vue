@@ -19,9 +19,9 @@
           memory-management enjoyer.
         </p>
         <div class="cta-row">
-          <a class="btn primary" href="#/feats" style="border-bottom:none">See my work →</a>
-          <a class="btn" href="https://github.com/Giulio2002" style="border-bottom:none">GitHub</a>
-          <a class="btn" href="#/eips" style="border-bottom:none">EIPs</a>
+          <a class="btn primary" href="#/feats">See my work →</a>
+          <a class="btn" href="https://github.com/Giulio2002">GitHub</a>
+          <a class="btn" href="#/eips">EIPs</a>
         </div>
       </div>
       <img src="/logo.png" alt="Giulio" class="hero-avatar" />

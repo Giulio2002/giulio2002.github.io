@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import { projects } from '@/data/projects'
+import PageHeader from '@/components/PageHeader.vue'
 </script>
 
 <template>
 <div class="page">
   <div class="container">
     <div class="flex-item big">
-      <p class="section-title centered"><span class="grad">Stuff I've done</span></p>
-      <p class="section-sub">
+      <PageHeader title="Stuff I've done">
         Highlights of the serious work, roughly ordered by how suicidal they made me.
-      </p>
+      </PageHeader>
 
       <div
         v-for="p in projects"

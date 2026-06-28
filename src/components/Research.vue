@@ -1,19 +1,15 @@
 <script setup lang="ts">
+import PageHeader from '@/components/PageHeader.vue'
 </script>
 
 <template>
 <div class="page">
   <div class="container">
     <div class="flex-item big">
-      <p class="section-title centered">
-        <img src="@/assets/rey.gif" alt="" aria-hidden="true" class="inverted smol" />
-        <span class="grad">Research</span>
-        <img src="@/assets/rey.gif" alt="" aria-hidden="true" class="smol" />
-      </p>
-      <p class="section-sub">
+      <PageHeader title="Research" gif="rey">
         Protocol-level R&amp;D — the stuff that's still half-theory, half-code. Most of it lives as
         discussion out in the open on the Ethereum research forums, not in a paper.
-      </p>
+      </PageHeader>
 
       <div class="card headline">
         <h3>Where my research lives</h3>
@@ -26,8 +22,8 @@
           there.
         </p>
         <div class="cta-row">
-          <a class="btn" href="https://ethereum-magicians.org/" target="_blank" style="border-bottom:none">Ethereum Magicians ↗</a>
-          <a class="btn" href="https://ethresear.ch/" target="_blank" style="border-bottom:none">ethresear.ch ↗</a>
+          <a class="btn" href="https://ethereum-magicians.org/" target="_blank">Ethereum Magicians ↗</a>
+          <a class="btn" href="https://ethresear.ch/" target="_blank">ethresear.ch ↗</a>
         </div>
       </div>
 

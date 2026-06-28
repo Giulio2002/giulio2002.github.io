@@ -1,16 +1,12 @@
 <script setup lang="ts">
+import PageHeader from '@/components/PageHeader.vue'
 </script>
 
 <template>
 <div class="page">
   <div class="container">
     <div class="flex-item big">
-      <p class="section-title centered">
-        <img src="@/assets/smol.gif" alt="" aria-hidden="true" class="inverted smol" />
-        <span class="grad">Stuff I do for fun</span>
-        <img src="@/assets/smol.gif" alt="" aria-hidden="true" class="smol" />
-      </p>
-      <p class="section-sub">Side quests, toys, and things I built because I felt like it.</p>
+      <PageHeader title="Stuff I do for fun" gif="smol">Side quests, toys, and things I built because I felt like it.</PageHeader>
 
       <div class="card headline">
         <h3>ETH Zürich <span class="pill live">student + guest lecturer</span></h3>
