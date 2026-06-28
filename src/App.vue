@@ -3,9 +3,14 @@ import NavBar from './components/Header.vue'
 </script>
 
 <template>
+  <a class="skip-link" href="#main">Skip to content</a>
   <NavBar/>
-  <main>
-    <router-view />
+  <main id="main">
+    <router-view v-slot="{ Component }">
+      <transition name="page" mode="out-in">
+        <component :is="Component" />
+      </transition>
+    </router-view>
   </main>
   <footer class="footer">
     <div class="container">
