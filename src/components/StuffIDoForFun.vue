@@ -11,12 +11,38 @@ import PageHeader from '@/components/PageHeader.vue'
       <div class="card headline">
         <h3>ETH Zürich <span class="pill live">student + guest lecturer</span></h3>
         <p>
-          I'm a student at <b>ETH Zürich</b>. I also got to flip the lecture hall around: I gave
-          a guest lecture there (D-MTEC, Spring 2025) on Ethereum protocol engineering and
-          consensus design. Slightly surreal to teach in a room you also sit exams in.
+          I'm a student at <b>ETH Zürich</b> (working on things like distributed LLM training on the
+          CSCS Alps GH200 supercomputer, probabilistic AI, and applied security). I also got to flip
+          the lecture hall around: I gave a guest lecture there (D-MTEC, Spring 2025) on Ethereum
+          protocol engineering and consensus design. Slightly surreal to teach in a room you also
+          sit exams in.
         </p>
         <a href="https://video.ethz.ch/lectures/d-mtec/2025/spring/363-1153-00L/v/AHfV4Bsjf6m"
-           target="_blank">Watch my ETH Zürich lecture →</a>
+           target="_blank" rel="noopener">Watch my ETH Zürich lecture →</a>
+      </div>
+
+      <div class="card">
+        <h3>claude-rotate</h3>
+        <p>
+          When you run formal-verification agent factories all day, you burn through usage windows
+          fast. So I wrote a Python CLI &amp; daemon that watches Claude Code usage windows and
+          automatically rotates between subscriptions before one hits its limit.
+        </p>
+        <a href="https://github.com/Giulio2002/claude-rotate" target="_blank" rel="noopener">claude-rotate →</a>
+      </div>
+
+      <div class="card">
+        <h3>Bend 2 DX — bend-vscode &amp; bend-build</h3>
+        <p>
+          When Bend 2 dropped I jumped straight in — and immediately missed editor tooling and
+          agent guidelines. So I built <code>bend-vscode</code> (syntax highlighting, autocomplete,
+          compiler diagnostics, icons) and <code>bend-build</code> (a single-file playbook for AI
+          models writing efficient, proved Bend software).
+        </p>
+        <div class="project-links">
+          <a href="https://github.com/Giulio2002/bend-vscode" target="_blank" rel="noopener">bend-vscode →</a>
+          <a href="https://github.com/Giulio2002/bend-build" target="_blank" rel="noopener">bend-build →</a>
+        </div>
       </div>
 
       <div class="card">
@@ -27,6 +53,7 @@ import PageHeader from '@/components/PageHeader.vue'
           takes. I built it to check whether the <code>extcodesize</code> exploit was viable in
           Erigon. Made it public — apparently some people now use it in production.
         </p>
+        <a href="https://github.com/Giulio2002/bsol" target="_blank" rel="noopener">bsol →</a>
       </div>
 
       <div class="card">
@@ -37,7 +64,7 @@ import PageHeader from '@/components/PageHeader.vue'
           shell. Written in Rust for no reason other than wanting a challenge on an otherwise
           easy project.
         </p>
-        <a href="https://github.com/Giulio2002/gpt-ask" target="_blank">gpt-ask →</a>
+        <a href="https://github.com/Giulio2002/gpt-ask" target="_blank" rel="noopener">gpt-ask →</a>
       </div>
 
       <div class="card">
@@ -48,7 +75,7 @@ import PageHeader from '@/components/PageHeader.vue'
           over arbitrary Weierstrass curve parameters, so you wouldn't need a new precompile
           every time. The EIP was ultimately rejected, but the fuzzer was fun.
         </p>
-        <a href="https://github.com/Giulio2002/eip1962-whitebox" target="_blank">
+        <a href="https://github.com/Giulio2002/eip1962-whitebox" target="_blank" rel="noopener">
           eip1962-whitebox →</a>
       </div>
 
@@ -59,7 +86,7 @@ import PageHeader from '@/components/PageHeader.vue'
           in Python; I needed JS, so I made it. Hasn't been maintained in years and probably
           doesn't work anymore — but it worked, and you can still install it from npm.
         </p>
-        <a href="https://github.com/Giulio2002/Raidenjs" target="_blank">RaidenJS →</a>
+        <a href="https://github.com/Giulio2002/Raidenjs" target="_blank" rel="noopener">RaidenJS →</a>
       </div>
 
       <div class="card">
@@ -72,10 +99,10 @@ import PageHeader from '@/components/PageHeader.vue'
           "right", it goes right. Say "left", it goes left.
         </p>
         <div class="tags">
-          <a class="tag" href="https://github.com/Giulio2002/pydobot-2.7" target="_blank">pydobot-2.7</a>
-          <a class="tag" href="https://github.com/Giulio2002/rosdobot" target="_blank">rosdobot</a>
-          <a class="tag" href="https://github.com/Giulio2002/Talking-Dobot" target="_blank">Talking-Dobot</a>
-          <a class="tag" href="https://github.com/Giulio2002/Dobot-Controller-Android" target="_blank">Android controller</a>
+          <a class="tag" href="https://github.com/Giulio2002/pydobot-2.7" target="_blank" rel="noopener">pydobot-2.7</a>
+          <a class="tag" href="https://github.com/Giulio2002/rosdobot" target="_blank" rel="noopener">rosdobot</a>
+          <a class="tag" href="https://github.com/Giulio2002/Talking-Dobot" target="_blank" rel="noopener">Talking-Dobot</a>
+          <a class="tag" href="https://github.com/Giulio2002/Dobot-Controller-Android" target="_blank" rel="noopener">Android controller</a>
         </div>
         <p style="margin-top:14px">Cringe video, for the historical record:</p>
         <iframe width="280" height="158"
@@ -88,17 +115,23 @@ import PageHeader from '@/components/PageHeader.vue'
       <div class="card">
         <h3>Open-source contributions</h3>
         <ul>
-          <li><a href="https://github.com/ledgerwatch/erigon/commits?author=Giulio2002" target="_blank">Erigon</a>
-            — author of the Caplin project, implemented Ethereum PoS, and much more.</li>
-          <li><a href="https://github.com/torquem-ch/silkworm/commits?author=Giulio2002" target="_blank">Silkworm</a>
+          <li><a href="https://github.com/ethereum/EthLib/pulls?q=is%3Apr+author%3AGiulio2002" target="_blank" rel="noopener">EthLib</a>
+            — #2 contributor (287 merged PRs): Lean 4 proofs for EVM program logic, EIP-7702, MODEXP, BLS12-381, alt_bn128, and consensus.</li>
+          <li><a href="https://github.com/erigontech/erigon/commits?author=Giulio2002" target="_blank" rel="noopener">Erigon</a>
+            — 1,160+ commits; creator of Caplin, implemented Ethereum PoS (The Merge), SSZ Engine API, and much more.</li>
+          <li><a href="https://github.com/ethereum/go-ethereum/pulls?q=is%3Apr+author%3AGiulio2002" target="_blank" rel="noopener">go-ethereum</a>
+            — implemented EIP-7939 (CLZ opcode) and Amsterdam tx gas-cap updates.</li>
+          <li><a href="https://github.com/bendlang/bend/pulls?q=is%3Apr+author%3AGiulio2002" target="_blank" rel="noopener">Bend 2</a>
+            — compiler correctness &amp; codegen bug fixes.</li>
+          <li><a href="https://github.com/erigontech/silkworm/commits?author=Giulio2002" target="_blank" rel="noopener">Silkworm</a>
             — implemented several still-existing syncing components and ETL framework integration.</li>
-          <li><a href="https://github.com/akula-bft/akula/commits?author=Giulio2002" target="_blank">Akula</a>
-            — implemented the JSON-RPC layer.</li>
-          <li><a href="https://github.com/sigp/lighthouse/commits?author=Giulio2002" target="_blank">Lighthouse</a>
+          <li><a href="https://github.com/akula-bft/akula/commits?author=Giulio2002" target="_blank" rel="noopener">Akula</a>
+            — implemented the first Rust Ethereum JSON-RPC layer.</li>
+          <li><a href="https://github.com/sigp/lighthouse/commits?author=Giulio2002" target="_blank" rel="noopener">Lighthouse</a>
             — partial light-client server implementation.</li>
-          <li><a href="https://github.com/UniLogin/UniLogin/commit/8314ceefaf79c8d667ec4c270b9f30cf3397e273" target="_blank">Universal Login</a>
+          <li><a href="https://github.com/UniLogin/UniLogin/commit/8314ceefaf79c8d667ec4c270b9f30cf3397e273" target="_blank" rel="noopener">Universal Login</a>
             — fixed a major backend vulnerability.</li>
-          <li><a href="https://github.com/raiden-network/raiden/commit/4431d0625383fead13069abd7186799911868014" target="_blank">Raiden Network</a>
+          <li><a href="https://github.com/raiden-network/raiden/commit/4431d0625383fead13069abd7186799911868014" target="_blank" rel="noopener">Raiden Network</a>
             — they weren't checking whether an account had enough money to make a transaction… good lord.</li>
         </ul>
       </div>
@@ -106,14 +139,14 @@ import PageHeader from '@/components/PageHeader.vue'
       <div class="card">
         <h3>Honorable mentions</h3>
         <ul>
-          <li><a href="https://github.com/Giulio2002/Contracts-Axios" target="_blank">Axios</a>
+          <li><a href="https://github.com/Giulio2002/Contracts-Axios" target="_blank" rel="noopener">Axios</a>
             — a decentralized options-trading instrument with its own Angular UI. No real use, but
             a cool project; I built it to learn engineering for financial instruments.</li>
-          <li><a href="https://github.com/Giulio2002/my-formal-verifications" target="_blank">Formal verifications</a>
-            — practiced formal verification.</li>
-          <li><a href="https://github.com/Giulio2002/Lock-Module" target="_blank">Vesting for Universal Login</a>
+          <li><a href="https://github.com/Giulio2002/my-formal-verifications" target="_blank" rel="noopener">Formal verifications (2019)</a>
+            — where the formal-verification itch originally started, back in high school.</li>
+          <li><a href="https://github.com/Giulio2002/Lock-Module" target="_blank" rel="noopener">Vesting for Universal Login</a>
             — a vesting hook for the Universal Login protocol.</li>
-          <li><a href="https://github.com/Giulio2002/Ethereum-Taxable-Token" target="_blank">Taxable token</a>
+          <li><a href="https://github.com/Giulio2002/Ethereum-Taxable-Token" target="_blank" rel="noopener">Taxable token</a>
             — an ERC-20 that skims a tax on every transfer.</li>
         </ul>
       </div>

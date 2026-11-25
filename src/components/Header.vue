@@ -49,7 +49,7 @@ onMounted(() => {
       <router-link class="nav-link" to="/hackathons" @click="closeMenu">/hackathons</router-link>
       <router-link class="nav-link" to="/stuffidoforfun" @click="closeMenu">/fun</router-link>
       <a class="nav-link" href="/cv.pdf" target="_blank" rel="noopener">/cv</a>
-      <a class="nav-link ext" href="https://substack.com/@giulioswamp" target="_blank" rel="noopener">/blog</a>
+      <a class="nav-link ext" href="https://giulioswamp.substack.com" target="_blank" rel="noopener">/blog</a>
       <a class="nav-link ext" href="https://github.com/Giulio2002" target="_blank" rel="noopener">/github</a>
       <a class="nav-link ext" href="https://twitter.com/GiulioRebuffo" target="_blank" rel="noopener">/twitter</a>
       <a class="nav-link ext" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener">/inspiration</a>

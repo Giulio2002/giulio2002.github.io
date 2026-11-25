@@ -1,140 +1,107 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Medium Length Professional CV
-% LaTeX Template
-% Version 3.0 (December 17, 2022)
-%
-% This template originates from:
-% https://www.LaTeXTemplates.com
-%
-% Author:
-% Vel (vel@latextemplates.com)
-%
-% Original author:
-% Trey Hunner (http://www.treyhunner.com/)
-%
-% License:
-% CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)
-%
+% Medium Length Professional CV — Giulio Rebuffo
+% Updated November 2026
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%----------------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
-%----------------------------------------------------------------------------------------
+\documentclass[10pt]{resume}
 
-\documentclass[
-	%a4paper, % Uncomment for A4 paper size (default is US letter)
-	11pt, % Default font size, can use 10pt, 11pt or 12pt
-]{resume} % Use the resume class
+\usepackage{ebgaramond}
+\usepackage[hidelinks]{hyperref}
 
-\usepackage{ebgaramond} % Use the EB Garamond font
-
-%------------------------------------------------
-
-\name{Giulio Rebuffo} % Your name to appear at the top
-
-% You can use the \address command up to 3 times for 3 different addresses or pieces of contact information
-% Any new lines (\\) you use in the \address commands will be converted to symbols, so each address will appear as a single line.
-
-\address{Zug, Gubelstrasse 7, 3000} % Main address
-
-
-\address{giulio.rebuffo@gmail.com} % Contact information
-
-%----------------------------------------------------------------------------------------
+\name{Giulio Rebuffo}
+\address{Applied AI $\times$ Client Dev, Ethereum Foundation \\ Former CTO \& AI Lead, Erigon}
+\address{Z\"urich / Zug, Switzerland \\ giulio.rebuffo@gmail.com \\ github.com/Giulio2002 \\ x.com/GiulioRebuffo \\ giulio2002.github.io}
 
 \begin{document}
 
 %----------------------------------------------------------------------------------------
-%	EDUCATION SECTION
+%	PROFILE
 %----------------------------------------------------------------------------------------
 
-\begin{rSection}{Education}
-	
-    \textbf{The American School In Switzerland, Lugano} \hfill \textit{2018-2022} \\ 
-	AP Diploma \\
-	Highest Honors Student \\
-	SAT Score: 1480 \\
-    AP Macroeconomics: 5/5 \\
-    AP Calculus AB: 5/5 \\
-    AP Calculus BC: 5/5 \\
-    AP Computer Science 5/5 \\
-    AP Italian: 5/5 \\
-    AP Statistics: 5/5 \\
-
-	\textbf{University Of Lugano} \hfill \textit{September 2022} \\ 
-	B.S. in Computer Science \& Engineering (ongoing) \\
-	
+\begin{rSection}{Profile}
+Ethereum protocol engineer, systems programmer, and formal-verification researcher working on Applied AI $\times$ Client Dev at the Ethereum Foundation. Former CTO, Project Lead, and AI Lead of Erigon (creator of Caplin, Erigon's embedded consensus client). Core work spans machine-checked Lean 4 verification of compiled Go client binaries and deployed mainnet bytecode (\textbf{Janus}, \textbf{EthLib}, \textbf{fv-uint256}, \textbf{fv-modexp}, \textbf{usdt-verify}), AI-built formal programs in Bend 2, execution and consensus client architecture, storage engineering (18\,TB $\to$ 1.6\,TB archive shrink), and Ethereum protocol specification. Co-author of four Final EIPs in Fusaka/Osaka and two EIPs scheduled for Glamsterdam.
 \end{rSection}
 
 %----------------------------------------------------------------------------------------
-%	WORK EXPERIENCE SECTION
+%	SELECTED ETHEREUM PROTOCOL & FORMAL VERIFICATION WORK
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Selected Protocol \& Formal Verification Work}
+\begin{list}{$\cdot$}{\leftmargin=0em}
+	\setlength{\itemsep}{-0.35em} \vspace{-0.4em}
+	\item \textbf{Compiled-Go Machine-Code Verification (Janus, fv-uint256, fv-modexp):} Created \textit{Janus}, a Lean 4 framework proving theorems directly against compiled linux/arm64 and linux/amd64 Go ELF binaries (Go compiler untrusted). Proved all 146 exported functions (293/293 rows) of \texttt{holiman/uint256} and \texttt{go-ethereum} v1.17.10's Osaka \texttt{MODEXP} precompile (\texttt{go-bigmodexpfix}, 43 arm64 + 37 amd64 rows) against \textit{EthLib}, with kernel-checked non-vacuity witnesses.
+	\item \textbf{Mainnet Bytecode \& Primitives Verification (usdt-verify, EthLib):} Formally verified in Lean 4 the deployed 11,075-byte 2017 USDT runtime bytecode on Ethereum mainnet across all 32 selectors, global supply invariant, security properties, and EIP-7702/EIP-8037 compatibility. \#2 contributor to \texttt{ethereum/EthLib} (287 merged PRs across EVM program logic, EIP-7702, MODEXP, BLS12-381, \texttt{alt\_bn128} pairing, and Gloas consensus).
+	\item \textbf{AI-Built Formal Programs (formal-factory, Bend 2):} Built \texttt{ff}, an agentic software factory behind deterministic proof-checking gates; shipped \texttt{bend-collections} (containers + proved crypto suite: SHA-256/512, Keccak-256, AES-GCM, ChaCha20-Poly1305, Argon2id, X25519, Ed25519, secp256k1/Schnorr), \texttt{bend-ssz} (all 240 Fulu + generic SSZ types proved), and \texttt{bend-zcash-blake2b}.
+	\item \textbf{Final EIPs (Fusaka / Osaka):} Co-authored EIP-7825 (Transaction Gas Limit Cap, $2^{24}$ gas), EIP-7934 (10\,MiB RLP Execution Block Size Limit), EIP-7939 (\texttt{CLZ} opcode; also implemented in \texttt{go-ethereum}), and EIP-7935 (Set default gas limit to 60M).
+	\item \textbf{Glamsterdam \& Active Protocol Proposals:} Co-authored EIP-7954 (Increase Maximum Contract Size 24\,KiB $\to$ 64\,KiB) and EIP-7975 (\texttt{eth/70} Partial Block Receipt Lists) --- both Last Call and Scheduled for Inclusion in Glamsterdam (EIP-7773). Authored EIP-8487 (Separate execution \& billing credits), EIP-8178 (Binary SSZ Transport for the Engine API, benchmarked on Kurtosis and merged into Erigon), EIP-8202 (Scheme-Agile Transactions), and EIP-7801 (\texttt{etha} Sharded Blocks Subprotocol).
+\end{list}
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	EXPERIENCE
 %----------------------------------------------------------------------------------------
 
 \begin{rSection}{Experience}
 
-	\begin{rSubsection}{University Of Genoa}{2016 - 2017}{Hobbyist Embedded System Developer}{Genoa, Italy}
-		\item I was allowed to do small research tasks for the robotics research team as an aspiring developer after catching one of the professor's attention,
-		\item I was able to get experience with the ROS framework and get valuable experience with C++ and Python.
-		\item I also built a simulation in C\# for drone path finding using the Unity 3D framework and used speech recognition in joint with my robotics knowledge.
+	\begin{rSubsection}{Ethereum Foundation}{Nov 2026 -- Present}{Applied AI $\times$ Client Dev}{Z\"urich / Remote}
+		\item Lead applied AI and formal-verification initiatives for Ethereum client development alongside EF technical and management teams.
+		\item Advance Lean 4 formal verification of production client binaries (\textit{Janus}, \textit{fv-uint256}, \textit{fv-modexp}), shared Ethereum specifications (\texttt{ethereum/EthLib}, 287 merged PRs), and deployed mainnet smart-contract bytecode (\textit{usdt-verify}).
+		\item Build agentic proof-generation workflows (\texttt{formal-factory}) and verified Bend 2 cryptographic and SSZ libraries.
 	\end{rSubsection}
 
-%------------------------------------------------
-
-	\begin{rSubsection}{Deepit AG}{2017-2018}{Intern Backend/Frontend/Blockchain Developer}{Genoa, Italy}
-		\item Built Smart contracts for multiple platforms such as hooks for the Universal Login protocol and rewriten the POA bridge to accept Compound C-Tokens.
-		\item Built frontends and wallets interfaces for customizable ERC20 tokens deployers and built a vesting hub protocol.
-		\item Built and managed PostgreSQL Databases for indexing of customer's transactions.
-        \item Experience with Backend-Frontend interaction of various kinds.
-        \item Learnt several technologies such as Solidity, Typescript, Javascript and WebAssembly (Emscripten).
-        \item Learnt several frameworks such as Truffle, Hardhat, Angular, React.
+	\begin{rSubsection}{Erigon Technologies AG}{2021 -- 2026}{CTO, Project Lead \& AI Lead}{Zug, Switzerland}
+		\item Led technical direction for Erigon (1,160+ commits) across execution, consensus, storage, networking, and hard-fork compatibility; Protocol Guild member (2022--2026).
+		\item Served as a primary Erigon engineer for Ethereum's Merge transition, implementing PoS execution/consensus integration, Engine API, copy-on-write state handling, and resurrecting the transaction pool.
+		\item Bootstrapped and led \textbf{Caplin}, Erigon's embedded validating consensus client; redesigned archive-node storage layout from \textbf{18\,TB to 1.6\,TB} ($\sim$11$\times$ reduction).
+		\item Built \textbf{GEVM} (mostly agent-built Go EVM, $\sim$2$\times$ faster than Geth and within $\sim$10\% of Rust \texttt{revm}; 100\% passing 14,665 Osaka and 16,908 Glamsterdam state tests) and \textbf{gdbx} (pure-Go libmdbx, 1.5--3.7$\times$ faster than CGO \texttt{mdbx-go}).
+		\item As AI Lead, designed agentic hard-fork implementation pipelines and self-fixing CI harnesses; built an experimental Post-Quantum Ethereum fork and \texttt{eth-ntt} Rust precompiles ($\sim$8.1\,$\mu$s Falcon-512 verification on M4).
+		\item Implemented an RL-based p2p peer-selection algorithm; contributed C++ syncing/ETL components to Silkworm and created the first Rust Ethereum JSON-RPC in Akula.
 	\end{rSubsection}
 
-%------------------------------------------------
-
-	\begin{rSubsection}{Asset Bridging Firm I am not saying the name}{2018 - 2020}{Intern Backend Rust Developer}{Unspecified}
-		\item Learnt how to manage a lot of money.
-        \item Refactored the entirety of their backend.
-        \item Rewritten their tools to conform their new backend version.
-		\item Learnt Rust, and its best practices, along with code refactoring abilities.
-		\item Learnt how large scales deployments are handled and how to act in a corporate-like environment.
+	\begin{rSubsection}{Asset Bridging Infrastructure Company}{2018 -- 2020}{Backend Rust Developer Intern}{Switzerland (Undisclosed)}
+		\item Refactored backend services and internal tooling in Rust for an L0 asset-bridging system handling high-value transaction flows; reviewed and audited Solidity contracts.
 	\end{rSubsection}
 
-    \begin{rSubsection}{Erigon AG}{2021 - present}{Project Lead}{Zug, Switzerland}
-		\item Implemented PoS transition within the Erigon Client, built the entirety and foundation of its consensus Engine.
-		\item Bootstraped and current Project Lead of the Caplin Project.
-		\item Implemented multiple still existing routines of the Silkworm Client written in C++.
-        \item Created the first Rust implementation of the Ethereum jsonrpc in Akula.
-        \item Currently Redesigning Ethereum as a whole within the Erigon Client.
-        \item Performed basics Devop tasks such as contributing in setting up our Kubernetes testing infrastructure.
-        \item Main technologies I used: Golang, Kubernetes, C++, Rust, Python, Docker.
+	\begin{rSubsection}{Deepit AG}{2017 -- 2018}{Backend / Frontend / Blockchain Developer Intern}{Genoa, Italy}
+		\item Built smart contracts (Universal Login hooks, POA bridge rewrite for Compound cTokens, vesting hub), ERC-20 deployer UIs, and PostgreSQL transaction indexers across Solidity, TypeScript, React, Angular, and WebAssembly.
+	\end{rSubsection}
+
+	\begin{rSubsection}{University of Genoa}{2016 -- 2017}{Embedded Systems / Robotics Research Assistant}{Genoa, Italy}
+		\item Supported robotics research using ROS, C++, and Python; built Unity/C\# drone path-finding simulations and speech-recognition control for a robotic arm.
 	\end{rSubsection}
 
 \end{rSection}
 
 %----------------------------------------------------------------------------------------
-%	TECHNICAL STRENGTHS SECTION
+%	TECHNICAL SKILLS
 %----------------------------------------------------------------------------------------
 
-\begin{rSection}{Technical Strengths}
-
-	\begin{tabular}{@{} >{\bfseries}l @{\hspace{6ex}} l @{}}
-		Programming Languages & Golang, C, C++, Rust, Python, Solidity, Javascript, Typescript \\
-		Protocols \& APIs & DevP2P, LibP2P, JSON, GRPC, REST \\
-		Databases & MDBX, LMDB, PostgreSQL, MongoDB \\
+\begin{rSection}{Technical Skills}
+	\begin{tabular}{@{} >{\bfseries}l @{\hspace{4ex}} p{12.6cm} @{}}
+		Languages & Go, Rust, Lean 4, C, C++, Python, Solidity, Bend 2, TypeScript, JavaScript, C\# \\
+		Verification \& AI & Lean 4 theorem proving, arm64/amd64 ISA \& EVM bytecode verification, Bend 2, agentic coding \& proof factories, self-fixing CI harnesses \\
+		Ethereum \& Protocols & Execution \& consensus clients, EVM, Engine API (JSON-RPC \& SSZ), DevP2P, LibP2P, Beacon API, RLP, SSZ, lattice precompiles (Falcon-512, ML-DSA-44), gRPC \\
+		Storage \& Infra & MDBX, LMDB, PostgreSQL, Docker, Kubernetes, Kurtosis, Linux, CI/CD \\
 	\end{tabular}
-
 \end{rSection}
 
 %----------------------------------------------------------------------------------------
-%	EXAMPLE SECTION
+%	EDUCATION & SPEAKING
 %----------------------------------------------------------------------------------------
 
-%\begin{rSection}{Section Name}
+\begin{rSection}{Education \& Speaking}
+	\textbf{ETH Z\"urich} \hfill \textit{2025 -- Present} \\
+	\textit{Computer Science Studies \& Guest Lecturer} \hfill \textit{Z\"urich, Switzerland} \\
+	Graduate coursework in Large-Scale AI Engineering (distributed LLM training on CSCS Alps GH200), Probabilistic AI, and Applied Security Lab. Guest Lecturer (D-MTEC, Spring 2025) on Ethereum protocol engineering and consensus design.
 
-	%Section content\ldots
+	\textbf{Universit\`a della Svizzera italiana (USI)} \hfill \textit{2022 -- 2025} \\
+	\textit{B.S. Computer Science \& Engineering} \hfill \textit{Lugano, Switzerland}
 
-%\end{rSection}
+	\textbf{The American School in Switzerland (TASIS)} \hfill \textit{2018 -- 2022} \\
+	\textit{AP Diploma, Highest Honors} \hfill \textit{Lugano, Switzerland} \\
+	SAT: 1480. AP 5/5 in Calculus AB, Calculus BC, Computer Science, Macroeconomics, Statistics, and Italian.
 
-%----------------------------------------------------------------------------------------
+	\textbf{Talks \& Awards:} ETH Z\"urich D-MTEC Guest Lecture (2025); PEEPanEIP \#151 (2025); Infinite Jungle Podcast Ep. 82 (2025); EthCC speaker; Lisbon Hackathon Solo Grand Prize (2022 --- Verkle Tree transition cut from $\sim$7 days to $\sim$6 hours).
+\end{rSection}
 
 \end{document}

@@ -8,7 +8,7 @@ import PageHeader from '@/components/PageHeader.vue'
   <div class="container">
     <div class="flex-item big">
       <PageHeader title="Stuff I've done">
-        Highlights of the serious work, roughly ordered by how suicidal they made me.
+        Highlights of the serious work, roughly ordered by recency and how many hours of sleep they cost me.
       </PageHeader>
 
       <div
@@ -28,6 +28,15 @@ import PageHeader from '@/components/PageHeader.vue'
         </ul>
         <div class="tags">
           <span class="tag" v-for="t in p.tags" :key="t">{{ t }}</span>
+        </div>
+        <div class="project-links" v-if="p.links && p.links.length">
+          <a
+            v-for="l in p.links"
+            :key="l.url"
+            :href="l.url"
+            target="_blank"
+            rel="noopener"
+          >{{ l.label }}</a>
         </div>
       </div>
 

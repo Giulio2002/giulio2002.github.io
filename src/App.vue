@@ -16,9 +16,9 @@ import NavBar from './components/Header.vue'
     <div class="container">
       <span>© 2016–2026 Giulio Rebuffo · built with too much caffeine</span>
       <span class="footer-links">
-        <a href="https://github.com/Giulio2002">github</a>
-        <a href="https://twitter.com/GiulioRebuffo">twitter</a>
-        <a href="https://substack.com/@giulioswamp">blog</a>
+        <a href="https://github.com/Giulio2002" target="_blank" rel="noopener">github</a>
+        <a href="https://twitter.com/GiulioRebuffo" target="_blank" rel="noopener">twitter</a>
+        <a href="https://giulioswamp.substack.com" target="_blank" rel="noopener">blog</a>
         <a href="mailto:giulio.rebuffo@gmail.com">email</a>
       </span>
     </div>
