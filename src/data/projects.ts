@@ -5,223 +5,143 @@ export interface ProjectLink {
 
 export interface Project {
   title: string
-  /** optional status pill: [label, css class] */
-  pill?: [string, string]
   meta: string
-  /** lead paragraph — may contain inline <b>/<code> HTML */
   body: string
-  /** optional bullet list — items may contain inline HTML */
   bullets?: string[]
-  tags: string[]
-  /** optional external/internal links */
   links?: ProjectLink[]
-  /** render with the highlighted .headline card style */
-  headline?: boolean
 }
 
 export const projects: Project[] = [
   {
-    title: 'Janus, fv-uint256 & fv-modexp — Machine-checked proofs of compiled Go',
-    pill: ['formal verification', 'pill live'],
-    meta: 'Lean 4 · Go · arm64 & amd64 machine code · 2026',
-    headline: true,
+    title: 'Janus, fv-uint256 & fv-modexp',
+    meta: '2026 · Lean 4, Go, arm64 / amd64',
     body:
-      '<b>Janus</b> is a Lean 4 framework for proving theorems directly about the <b>compiled arm64 and amd64 ELF machine code</b> emitted by the Go compiler — without trusting the Go compiler or linker. Using Janus, I formally verified two critical Ethereum client components against clean mathematical specifications, with every theorem paired with a kernel-checked non-vacuity witness.',
+      'Janus is a Lean 4 framework for proving theorems about Go functions as compiled. It extracts the actual instruction bytes out of a linux/arm64 or linux/amd64 Go ELF binary, runs them in a Lean model of the ISA, and checks proofs in Lean\'s kernel. The Go compiler and linker are not trusted.',
     bullets: [
-      '<b>fv-uint256:</b> proved all <b>146 exported functions</b> (293/293 rows across arm64, amd64, and <code>GOAMD64=v3</code>) of <code>holiman/uint256</code> — the 256-bit arithmetic library powering Geth and Erigon — at the compiled machine-code level.',
-      '<b>fv-modexp:</b> proved <code>go-ethereum</code> v1.17.10\'s Osaka <b>MODEXP</b> precompile (<code>Run</code>, <code>RequiredGas</code>, and patched <code>go-bigmodexpfix</code> <code>math/big</code> + assembly kernels; 43/43 arm64 &amp; 37/37 amd64 rows) against the <b>EthLib</b> specification for every fork from Fusaka onward.',
-      'Zero <code>sorry</code>, zero extra axioms; proofs verify the exact bytes the CPU executes.',
+      'fv-uint256: verified all 146 exported functions (293 rows across arm64, amd64, and GOAMD64=v3) of holiman/uint256, the 256-bit integer library used by Geth and Erigon.',
+      'fv-modexp: verified go-ethereum v1.17.10\'s Osaka MODEXP precompile (Run, RequiredGas, and go-bigmodexpfix math/big + assembly kernels; 43 arm64 + 37 amd64 rows) against EthLib for every fork from Fusaka on.',
+      'Every main theorem has a kernel-checked non-vacuity witness, no sorry, and no added axioms.',
     ],
-    tags: ['Lean 4', 'arm64', 'amd64', 'Go', 'formal verification', 'geth'],
     links: [
-      { label: 'Janus →', url: 'https://github.com/Giulio2002/Janus' },
-      { label: 'fv-uint256 →', url: 'https://github.com/Giulio2002/fv-uint256' },
-      { label: 'fv-modexp →', url: 'https://github.com/Giulio2002/fv-modexp' },
+      { label: 'Janus', url: 'https://github.com/Giulio2002/Janus' },
+      { label: 'fv-uint256', url: 'https://github.com/Giulio2002/fv-uint256' },
+      { label: 'fv-modexp', url: 'https://github.com/Giulio2002/fv-modexp' },
     ],
   },
   {
-    title: 'usdt-verify — Formal verification of deployed USDT mainnet bytecode',
-    pill: ['Lean 4 · mainnet', 'pill live'],
-    meta: 'Lean 4 · EthLib · EVM bytecode · Nov 2026',
-    headline: true,
+    title: 'usdt-verify',
+    meta: 'Nov 2026 · Lean 4, EthLib, EVM bytecode',
     body:
-      'Machine-checked formal verification in Lean 4 of the actual <b>11,075-byte TetherToken (USDT) runtime bytecode</b> deployed on Ethereum mainnet at <code>0xdAC17F958D2ee523a2206206994597C13D831ec7</code> since 2017 — verified directly against the deployed bytes (not Solidity source) on top of <b>EthLib</b>.',
+      'Formal verification in Lean 4 of the 11,075-byte TetherToken (USDT) runtime bytecode deployed on Ethereum mainnet at 0xdAC17F958D2ee523a2206206994597C13D831ec7 since 2017. Verified directly against the deployed bytes on top of EthLib rather than the Solidity source.',
     bullets: [
-      'Complete dispatcher and per-function verification across all <b>32 function selectors</b>, fallback paths, and zero-ether enforcement.',
-      'Proved the global <b>supply invariant</b> (sum of all 2<sup>160</sup> balances equals <code>_totalSupply</code>) across every write path, plus pause, blacklist, allowance, owner-only, and deprecated-forwarding security properties.',
-      'Covers every fork from Berlin through Glamsterdam, including <b>EIP-7702</b> delegations and the <b>EIP-8037</b> gas meter; contributed reusable EVM program-logic lemmas back to <code>ethereum/EthLib</code>.',
+      'Covers all 32 selectors, dispatcher completeness, fallback paths, and zero-ETH rejection.',
+      'Proves the global supply invariant (sum of all 2^160 balances equals _totalSupply) across every write path, plus pause, blacklist, allowance, owner-only, and deprecated forwarding properties.',
+      'Covers forks from Berlin through Glamsterdam, including EIP-7702 delegations and the EIP-8037 gas meter.',
     ],
-    tags: ['Lean 4', 'EVM bytecode', 'EthLib', 'smart contract security'],
-    links: [{ label: 'usdt-verify →', url: 'https://github.com/Giulio2002/usdt-verify' }],
+    links: [{ label: 'usdt-verify', url: 'https://github.com/Giulio2002/usdt-verify' }],
   },
   {
-    title: 'EthLib — Formally verified Ethereum primitives in Lean 4',
-    pill: ['287 merged PRs', 'pill live'],
-    meta: 'Lean 4 · Ethereum Foundation · 2026',
+    title: 'EthLib',
+    meta: '2026 · Lean 4 · Ethereum Foundation',
     body:
-      'Core contributor (#2 overall by commits) to <code>ethereum/EthLib</code>, the shared Lean 4 home for formally verified Ethereum execution, consensus, and cryptographic specifications and proofs.',
+      'Second-largest contributor (287 merged PRs) to ethereum/EthLib, the shared Lean 4 library of formally verified Ethereum execution, consensus, and cryptographic primitives.',
     bullets: [
-      'Built EVM program-logic proofs covering call composition (<code>CALL</code>, <code>CREATE</code>, <code>CREATE2</code>), memory/stack effects, gas-monotone rules, and <b>EIP-7702</b> authorization &amp; delegation semantics.',
-      'Specified and proved execution precompiles and cryptographic primitives: <b>MODEXP</b>, SHA-256, RIPEMD-160, KECCAK256, <b>BLS12-381</b> (RFC 9380 hash-to-field &amp; G2 cofactor clearing), and <b>alt_bn128</b> pairing bilinearity.',
-      'Contributed Gloas consensus builder-bid specs, ENR/discv5 networking proofs, and fast <code>NatCode</code> bytecode representation.',
+      'EVM program logic for CALL / CREATE / CREATE2 composition, memory and stack effects, gas-monotone rules, and EIP-7702 authorizations.',
+      'Specs and proofs for MODEXP, SHA-256, RIPEMD-160, Keccak-256, BLS12-381 (RFC 9380 hash-to-field and G2 cofactor clearing), and alt_bn128 pairing bilinearity.',
+      'Gloas consensus builder bids, ENR/discv5 proofs, and the NatCode bytecode representation.',
     ],
-    tags: ['Lean 4', 'Ethereum specs', 'cryptography', 'EVM', 'consensus'],
-    links: [{ label: 'ethereum/EthLib →', url: 'https://github.com/ethereum/EthLib' }],
+    links: [{ label: 'ethereum/EthLib', url: 'https://github.com/ethereum/EthLib' }],
   },
   {
-    title: 'formal-factory (ff) & Bend 2 verified cryptography / SSZ suite',
-    pill: ['AI × FV', 'pill warn'],
-    meta: 'Bend 2 · Lean 4 · Python · C · Sep – Nov 2026',
+    title: 'formal-factory (ff) & Bend 2 verified libraries',
+    meta: 'Sep–Nov 2026 · Bend 2, Lean 4, Python, C',
     body:
-      'Built <b>formal-factory</b> (<code>ff</code>), an agentic software factory where AI agents write implementations together with machine-checked proofs in Lean 4 or Bend 2, optimize them, and pass a deterministic proof-checker gate. Used it to ship a broad suite of proved Bend 2 libraries compiled to native C.',
+      'Built ff, an agentic software factory where coding agents write both the implementation and machine-checked proofs in Lean 4 or Bend 2, optimize performance, and only merge through a deterministic proof-checker gate.',
     bullets: [
-      '<b>bend-collections (★49):</b> core containers plus a proved cryptography suite — SHA-256/512, Keccak-256, SHA3-256, BLAKE2s/2b/3, HMAC, HKDF, constant-time AES &amp; AES-GCM, Argon2id, ChaCha20/Poly1305/AEAD, X25519, Ed25519, and secp256k1 (ECDSA, ECRECOVER, BIP-340 Schnorr).',
-      '<b>bend-ssz:</b> pure-Bend SSZ for all <b>240</b> mainnet Fulu and <code>ssz_generic</code> types with machine-checked decode, encode, and <code>hash_tree_root</code> proofs.',
-      '<b>bend-zcash-blake2b:</b> formally proved BLAKE2b packaged as a C library and Rust <code>blake2b_simd</code> drop-in for Zcash; plus <b>bend-sha256 (★20)</b>, <b>bend-keccak</b>, and upstream compiler fixes in <code>bendlang/bend</code>.',
+      'bend-collections: standard containers plus a proved crypto suite (SHA-256/512, Keccak-256, SHA3-256, BLAKE2s/2b/3, HMAC, HKDF, constant-time AES and AES-GCM, Argon2id, ChaCha20/Poly1305/AEAD, X25519, Ed25519, secp256k1 ECDSA/ECRECOVER/BIP-340 Schnorr) benchmarked against C.',
+      'bend-ssz: pure-Bend SSZ for all 240 mainnet Fulu and ssz_generic types with proved encode, decode, and hash_tree_root.',
+      'bend-zcash-blake2b (proved BLAKE2b C library + Rust blake2b_simd drop-in for Zcash), bend-sha256, bend-keccak, plus upstream compiler fixes in bendlang/bend.',
     ],
-    tags: ['Bend 2', 'Lean 4', 'LLM agents', 'SSZ', 'cryptography', 'C'],
     links: [
-      { label: 'ff →', url: 'https://github.com/Giulio2002/ff' },
-      { label: 'bend-collections →', url: 'https://github.com/Giulio2002/bend-collections' },
-      { label: 'bend-ssz →', url: 'https://github.com/Giulio2002/bend-ssz' },
-      { label: 'Write-up →', url: 'https://giulioswamp.substack.com/p/creating-a-formal-programs-factory' },
+      { label: 'ff', url: 'https://github.com/Giulio2002/ff' },
+      { label: 'bend-collections', url: 'https://github.com/Giulio2002/bend-collections' },
+      { label: 'bend-ssz', url: 'https://github.com/Giulio2002/bend-ssz' },
+      { label: 'Substack write-up', url: 'https://giulioswamp.substack.com/p/creating-a-formal-programs-factory' },
     ],
   },
   {
-    title: 'GEVM — High-performance, mostly agent-built EVM in Go',
-    pill: ['★59 · ~2× geth', 'pill'],
-    meta: 'Go · C · EVM · 2026',
+    title: 'GEVM',
+    meta: '2026 · Go, C',
     body:
-      'A from-scratch, behavior-identical Go port of the Rust reference EVM semantics — built largely with coding agents and tuned down to zero-allocation hot paths. Runs <b>~2× faster than go-ethereum</b> and within ~10% of Rust <code>revm</code> on ERC-20 workloads.',
+      'A from-scratch, behavior-identical Go port of the Rust reference EVM semantics, built mostly by coding agents. Runs ~2x faster than go-ethereum and within ~10% of revm on ERC-20 benchmarks.',
     bullets: [
-      'Passes <b>100%</b> of pinned execution-specs state tests: <b>14,665 / 14,665</b> Osaka and <b>16,908 / 16,908</b> Amsterdam (Glamsterdam) fixtures including multidimensional state gas and EIP-7702 accounting.',
-      'Full precompile suite (BN254, BLS12-381, P256VERIFY, MODEXP, BLAKE2F) and differential testing against reference EVMs.',
+      'Passes 100% of pinned execution-specs state tests: 14,665 Osaka and 16,908 Amsterdam (Glamsterdam) fixtures, including multidimensional state gas and EIP-7702.',
+      'Full precompile suite (BN254, BLS12-381, P256VERIFY, MODEXP, BLAKE2F) and differential tests.',
     ],
-    tags: ['Go', 'EVM', 'performance', 'LLM agents', 'Glamsterdam'],
     links: [
-      { label: 'gevm →', url: 'https://github.com/Giulio2002/gevm' },
-      { label: 'Blog post →', url: 'https://giulioswamp.substack.com/p/the-mostly-agent-built-evm-as-fast' },
+      { label: 'gevm', url: 'https://github.com/Giulio2002/gevm' },
+      { label: 'Substack post', url: 'https://giulioswamp.substack.com/p/the-mostly-agent-built-evm-as-fast' },
     ],
   },
   {
-    title: 'gdbx — Pure-Go libmdbx implementation',
-    pill: ['database', 'pill'],
-    meta: 'Go · Assembly · SSE2 · 2026',
+    title: 'gdbx',
+    meta: '2026 · Go, assembly',
     body:
-      'A pure-Go, file-format-compatible implementation of <b>libmdbx</b> with assembly/SSE2-optimized binary search — avoiding CGO call overhead entirely while delivering <b>1.5–3.7× faster</b> random reads and writes than CGO <code>mdbx-go</code> in benchmarks.',
-    tags: ['Go', 'MDBX', 'B+Tree', 'assembly', 'SSE2'],
-    links: [{ label: 'gdbx →', url: 'https://github.com/Giulio2002/gdbx' }],
+      'Pure-Go, file-format-compatible implementation of libmdbx with assembly/SSE2 binary search. Drops CGO overhead and runs 1.5 to 3.7x faster than mdbx-go on random reads and writes.',
+    links: [{ label: 'gdbx', url: 'https://github.com/Giulio2002/gdbx' }],
   },
   {
-    title: 'Caplin — a full Ethereum consensus client, mostly solo',
-    pill: ['creator · 2022–2026', 'pill'],
-    meta: 'Go · Erigon · 2022 – 2026',
-    headline: true,
+    title: 'Caplin (Erigon consensus client)',
+    meta: '2022–2026 · Go · Erigon',
     body:
-      "I built an entire Consensus Layer for Erigon because I didn't like how the existing ones operated. It started as a consensus light client, but there weren't enough light-client servers on mainnet, so I gave up on half-measures and went for the full thing. The first prototype took ~9 months. Most of it was me — because needing 10 developers for a consensus layer is, if you ask me, a <b>skill issue</b> (this is irony). I led the project through production at Erigon and brought in another company's manpower, so apparently I had enough social skills to land real partnerships too.",
+      'I wrote an entire Consensus Layer for Erigon because I did not like how the existing ones operated. It started as a consensus light client, but there were not enough light-client servers on mainnet, so I gave up on half-measures and went for the full thing. First prototype took about 9 months, mostly solo (needing 10 developers for a consensus layer is a skill issue, this is irony). Led it through production and brought in another company\'s manpower along the way.',
     bullets: [
-      'Architected Ethereum PoS consensus end-to-end as Erigon\'s embedded validating CL.',
-      'Memory management &amp; caching for distributed systems.',
-      'CPU/heap profiling and optimization.',
-      'DevOps fundamentals — most notably Kubernetes.',
+      'Ethereum PoS consensus end-to-end as Erigon\'s embedded validating CL.',
+      'Memory management, caching, and CPU/heap profiling for long-running nodes.',
+      'Kubernetes test infrastructure and deployment.',
     ],
-    tags: ['Go', 'consensus', 'libp2p', 'SSZ', 'profiling', 'Kubernetes'],
   },
   {
-    title: 'Compact data model for archive nodes',
-    pill: ['18TB → 1.6TB', 'pill'],
-    meta: 'Storage engineering · Erigon / Caplin',
+    title: 'Compact archive-node data model (18 TB to 1.6 TB)',
+    meta: 'Erigon / Caplin · MDBX, snapshots, ETL',
     body:
-      'I redesigned the data model for Ethereum archive nodes, cutting storage from <b>18 TB to 1.6 TB</b> — an ~11× reduction — while keeping historical state fully queryable. Better scalability, cheaper to run, faster to query.',
-    bullets: [
-      'Data-model optimization: compact, efficient on-disk structures.',
-      'Scalability: dramatically lower storage footprint for archive nodes.',
-      'Performance: improved query efficiency and lower operational cost.',
-    ],
-    tags: ['data modeling', 'MDBX', 'snapshots', 'ETL'],
+      'Redesigned how Ethereum archive nodes lay out historical state on disk, cutting footprint from 18 TB down to 1.6 TB (~11x reduction) while keeping all historical state queryable.',
   },
   {
-    title: "The Merge — Ethereum PoS in Erigon's execution layer",
-    meta: 'Go · Erigon · 2022',
+    title: 'The Merge in Erigon',
+    meta: '2022 · Go · Erigon',
     body:
-      'As a junior on the Erigon team I was handed "The Merge" — the PoS implementation for the execution layer. Nominally a team effort with one senior and another junior, but I ended up doing most of it. Mostly a test of stress, patience and responsibility management. It shipped.',
+      'As a junior on the Erigon team I was handed "The Merge" (the PoS transition for the execution layer). Nominally a team of three, though I ended up doing most of it. Mostly a test of stress, patience, and responsibility management. It shipped.',
     bullets: [
-      "Resurrected Erigon's transaction pool (it didn't work before) — learned how the tx pool really works.",
-      'Engine API implementation — learned how consensus-driven distributed systems are architected.',
-      'State management across EL states — copy-on-write Ethereum state handling.',
-      'Worked across client teams with very different backgrounds (ex-Googlers, ex-Ivy, and more) — and <b>not incompetent ones</b>.',
+      'Resurrected Erigon\'s transaction pool (it did not work before).',
+      'Engine API implementation and copy-on-write EL state handling.',
+      'Cross-client interop with teams from very different backgrounds (and not incompetent ones).',
     ],
-    tags: ['Engine API', 'txpool', 'state', 'PoS'],
   },
   {
-    title: 'Post-Quantum Ethereum — experimental Erigon fork & eth-ntt precompiles',
-    pill: ['research', 'pill pink'],
-    meta: 'Go + Rust · Falcon-512 / ML-DSA-44 · 2026',
+    title: 'Post-Quantum Ethereum & eth-ntt precompiles',
+    meta: '2026 · Go, Rust · Falcon-512, ML-DSA-44',
     body:
-      'An experimental Erigon build and Rust Ring-LWE precompile library (<code>eth-ntt</code>) exploring post-quantum Ethereum. Implemented seven EVM precompiles (<code>0x12</code>–<code>0x18</code>: NTT, modular vector ops, SHAKE, <code>FALCON_VERIFY</code>, <code>LP_NORM</code>) and <b>Falcon-512</b> composable transactions (EIP-8175 extension + EIP-8202), proven end-to-end on a Kurtosis devnet.',
+      'Experimental Erigon fork and Rust lattice precompile library (eth-ntt) testing post-quantum signatures on Ethereum. Seven EVM precompiles (0x12 to 0x18: generic NTT, vector modular ops, SHAKE, FALCON_VERIFY, LP_NORM) plus Falcon-512 composable transactions proven end-to-end on a Kurtosis devnet.',
     bullets: [
-      '<b>~8.1 µs</b> Falcon-512 full verification on Apple M4 (~1,150× faster than BigUint), with only ~2.9% of transaction gas spent on cryptography.',
-      'Generic NTT precompiles supporting Falcon-512, Dilithium (ML-DSA-44), and Kyber, plus Yul on-chain verifier contracts.',
-      'Full RLP encode/decode, signer integration, txpool &amp; receipt support on a live devnet.',
+      '~8.1 µs full Falcon-512 verification on Apple M4 (~1,150x faster than BigUint), with ~2.9% of tx gas spent on cryptography.',
+      'Generic NTT precompiles covering Falcon-512, Dilithium (ML-DSA-44), and Kyber, with Yul verifier contracts.',
     ],
-    tags: ['Falcon-512', 'Dilithium', 'EIP-8202', 'EIP-8175', 'precompiles', 'Rust', 'Kurtosis'],
     links: [
-      { label: 'pq-eth-precompiles →', url: 'https://github.com/Giulio2002/pq-eth-precompiles' },
-      { label: 'pq-eth-demo →', url: 'https://github.com/Giulio2002/pq-eth-demo' },
+      { label: 'pq-eth-precompiles', url: 'https://github.com/Giulio2002/pq-eth-precompiles' },
+      { label: 'pq-eth-demo', url: 'https://github.com/Giulio2002/pq-eth-demo' },
     ],
   },
   {
-    title: 'AI-driven hard-fork & CI automation (Erigon)',
-    pill: ['tooling', 'pill warn'],
-    meta: "Python · agentic tooling · Erigon AI Lead · 2025 – 2026",
+    title: 'Agentic hard-fork & CI tooling (Erigon)',
+    meta: '2025–2026 · Python · Erigon AI Lead',
     body:
-      "Designed Erigon's agentic coding workflows: LLM agents that implement Ethereum consensus and execution hard forks across state transition, block production, and archive-node subsystems, plus self-fixing CI harnesses that diagnose failures against official spec test vectors in a closed loop until green. Because writing fork boilerplate by hand is a job for a machine.",
-    tags: ['Python', 'LLM agents', 'spec tests', 'CI automation'],
+      'Built Erigon\'s agentic coding harnesses: LLM agents implementing Ethereum hard forks across Caplin\'s state transition, block production, and archive subsystems, plus self-fixing CI runners validating changes against official spec tests in a closed loop until green.',
   },
   {
-    title: 'Robotics research — University of Genoa',
-    meta: 'C++ / C# / Python · age 14',
+    title: 'Earlier systems work (Akula, Silkworm, L0 bridge, Genoa robotics)',
+    meta: '2016–2022 · Rust, C++, Go, Solidity, C#',
     body:
-      "At 14 I became an unpaid slave (their word, probably mine) at the University of Genoa, working on robotics. I controlled a robotic arm with speech recognition, built a path-finding algorithm for drones, and worked with ROS. I simulated drone movement in Unity. I decided academia wasn't my vocation — it underpays you.",
-    bullets: [
-      'Unity + C# simulations.',
-      'Inner workings of embedded systems.',
-      'How academic research actually works.',
-    ],
-    tags: ['ROS', 'Unity', 'C++', 'embedded'],
-  },
-  {
-    title: 'Bridge development — unnamed L0 firm, Switzerland',
-    meta: 'Rust + Solidity · 2018 – 2020',
-    body:
-      'I worked at an asset-bridging (L0) firm, building part of the new Rust backend, refactoring their code, implementing calldata passing into their Solidity contracts, and reviewing/auditing some of those contracts.',
-    bullets: [
-      'Rust — my first serious use of it.',
-      'Refactoring code with more duplication than the wildlife near Nagasaki.',
-      'Handling large amounts of customer money responsibly.',
-    ],
-    tags: ['Rust', 'Solidity', 'audits', 'bridges'],
-  },
-  {
-    title: 'JSON-RPC in Akula (Rust Ethereum client)',
-    meta: 'Rust',
-    body:
-      'I implemented the JSON-RPC interface in Akula before the project shut down — to spec, with an easy way to add new methods. The first Rust implementation of the Ethereum JSON-RPC.',
-    bullets: [
-      "Deep familiarity with Ethereum's JSON-RPC API surface.",
-      'More proficiency in Rust.',
-    ],
-    tags: ['Rust', 'JSON-RPC'],
-  },
-  {
-    title: 'Pre-sort-before-insert framework (Go, Rust, C++)',
-    meta: 'Databases · external merge sort',
-    body:
-      'A system that takes randomly-ordered data and inserts it sequentially for efficient writes into B-Tree-based databases — external merge sort with a heap. Simple, but it cut our database write overhead meaningfully.',
-    bullets: [
-      'Designing a reusable framework from scratch.',
-      'Practical database/storage design.',
-    ],
-    tags: ['B-Tree', 'merge sort', 'Go', 'Rust', 'C++'],
+      'Built the first Rust implementation of Ethereum JSON-RPC in Akula before it shut down, wrote syncing/ETL components in Silkworm (C++) and a pre-sort-before-insert external merge sort for B-Tree DBs, refactored a Swiss L0 asset-bridging backend in Rust, and did robotics / Unity drone simulations at the University of Genoa at 14 (decided academia underpays you).',
   },
 ]

@@ -1,68 +1,44 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, onMounted } from 'vue'
 
-const open = ref(false); // mobile menu
+const theme = ref<'light' | 'dark'>('light')
 
-// theme toggle — persisted, applied to <html data-theme>
-const theme = ref<'dark' | 'light'>('dark');
-function applyTheme(t: 'dark' | 'light') {
-  theme.value = t;
-  document.documentElement.setAttribute('data-theme', t);
-  try { localStorage.setItem('theme', t); } catch (e) { /* ignore */ }
-}
 function toggleTheme() {
-  applyTheme(theme.value === 'dark' ? 'light' : 'dark');
+  const next = theme.value === 'dark' ? 'light' : 'dark'
+  theme.value = next
+  document.documentElement.setAttribute('data-theme', next)
+  try {
+    localStorage.setItem('theme', next)
+  } catch {
+    /* ignore storage errors */
+  }
 }
-function closeMenu() { open.value = false; }
 
 onMounted(() => {
-  // index.html applies the persisted theme to <html data-theme> before paint;
-  // just sync our ref to whatever it set (no second localStorage read).
-  theme.value = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
-});
+  theme.value = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light'
+})
 </script>
 
 <template>
-<nav class="header">
-  <div class="nav-inner">
-    <router-link class="brand" to="/" @click="closeMenu">
-      <span class="brand-mark">gr</span>
-      <span class="brand-name">giulio<span class="brand-eth">.eth</span></span>
-    </router-link>
-
-    <button
-      class="hamburger"
-      type="button"
-      @click="open = !open"
-      :aria-expanded="open"
-      aria-label="Toggle navigation menu"
-      aria-controls="nav-menu"
-    >
-      <i :class="open ? 'fas fa-xmark' : 'fas fa-bars'" aria-hidden="true"></i>
-    </button>
-
-    <div id="nav-menu" class="nav-menu" :class="{ open }">
-      <router-link class="nav-link" to="/" @click="closeMenu">/home</router-link>
-      <router-link class="nav-link" to="/feats" @click="closeMenu">/work</router-link>
-      <router-link class="nav-link" to="/research" @click="closeMenu">/research</router-link>
-      <router-link class="nav-link" to="/eips" @click="closeMenu">/eips</router-link>
-      <router-link class="nav-link" to="/hackathons" @click="closeMenu">/hackathons</router-link>
-      <router-link class="nav-link" to="/stuffidoforfun" @click="closeMenu">/fun</router-link>
-      <a class="nav-link" href="/cv.pdf" target="_blank" rel="noopener">/cv</a>
-      <a class="nav-link ext" href="https://giulioswamp.substack.com" target="_blank" rel="noopener">/blog</a>
-      <a class="nav-link ext" href="https://github.com/Giulio2002" target="_blank" rel="noopener">/github</a>
-      <a class="nav-link ext" href="https://twitter.com/GiulioRebuffo" target="_blank" rel="noopener">/twitter</a>
-      <a class="nav-link ext" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener">/inspiration</a>
-      <button
-        class="theme-toggle"
-        type="button"
-        @click="toggleTheme"
-        :aria-label="theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'"
-        :title="theme === 'dark' ? 'Light mode' : 'Dark mode'"
-      >
-        <i :class="theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon'" aria-hidden="true"></i>
-      </button>
+  <header class="site-header">
+    <div class="wrap nav-row">
+      <router-link class="site-name" to="/">Giulio Rebuffo</router-link>
+      <nav class="nav-links" aria-label="Main navigation">
+        <router-link to="/feats">work</router-link>
+        <router-link to="/research">research</router-link>
+        <router-link to="/eips">eips</router-link>
+        <router-link to="/hackathons">hackathons</router-link>
+        <router-link to="/stuffidoforfun">fun</router-link>
+        <a href="/cv.pdf" target="_blank" rel="noopener">cv</a>
+        <button
+          class="theme-btn"
+          type="button"
+          @click="toggleTheme"
+          :aria-label="theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'"
+        >
+          [{{ theme === 'dark' ? 'light' : 'dark' }}]
+        </button>
+      </nav>
     </div>
-  </div>
-</nav>
+  </header>
 </template>
